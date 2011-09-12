@@ -1,0 +1,46 @@
+Project Charter
+===============
+
+The following charter for Jakarta HttpComponents project was approved the Jakarta Project Management Committee (PMC) on Oct 31, 2005
+
+(0) Rationale
+
+The original Jakarta Commons HttpClient API has a number limitations that cannot be resolved without a significant architectural redesign. Moreover, Jakarta Commons HttpClient has been increasingly used in applications and environments it has not been specifically designed for. The existing monolithic design no longer adequately reflects the use patterns of HttpClient. HttpClient needs to be refactored into a toolset of simple, low level HTTP components suitable for building more specialized HTTP services.
+
+(1) Project scope
+
+* Jakarta HttpComponents develops a toolset of low level components focused exclusively at the transport aspects of HTTP protocol.
+
+* Jakarta HttpComponents will provide ONLY a toolset of low level generic transport APIs. In particular, server side application layer APIs WILL NOT be developed.
+
+* Jakarta HttpComponents MUST be content agnostic. The project DOES NOT develop components intended to produce or consume content of HTTP messages.
+
+* Jakarta HttpComponents continues the development of Jakarta HttpClient (formerly Jakarta Commons HttpClient ) based on the toolset of HTTP components. This tool focuses on the client side of HTTP.
+
+* Jakarta HttpComponents is additional charged with the maintenance of the existing Jakarta Commons HttpClient component.
+
+* Jakarta HttpComponents MAY develop application layer components (such as an HTTP connector, a lightweight server component, proxy components) as reference material to demonstrate the capabilities of the toolset. The said artifacts ARE NOT meant for production use and are not released as official Apache Jakarta products.
+
+* Jakarta HttpComponents collaborates with other projects to develop specialized HTTP services for production use based on the toolset of HTTP components.
+
+(2) Targeted specifications and standards
+
+* RFC1945 Hypertext Transfer Protocol -- HTTP/1.0
+* RFC2616 Hypertext Transfer Protocol -- HTTP/1.1
+* RFC2617 HTTP Authentication: Basic and Digest Access Authentication
+* RFC2109 HTTP State Management Mechanism -- Cookies
+* RFC2965 HTTP State Management Mechanism -- Cookie2
+* A standard for robot exclusion <http://www.robotstxt.org/wc/norobots-rfc.html> - robots.txt parser (<http://www.osjava.org/norbert/index.html> contribution requiring Software Grant)
+
+(3) Initial set of committers
+
+Project Lead
+
+  Michael Becke
+
+Project Committers
+ 
+  Adrian Sutton
+  Ortwin Glueck
+  Oleg Kalnichevski
+  Henri Yandell
