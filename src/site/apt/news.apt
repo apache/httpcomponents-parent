@@ -30,6 +30,13 @@
 
 HttpComponents Project News 
 
+* 23 September 2011 - HttpComponents HttpCore 4.2-alpha2 released
+
+    This is the second ALPHA release of HttpCore 4.2. This release comes with completely redesigned 
+    and rewritten asynchronous protocol handlers. New protocol handling API used in conjunction 
+    with connection pooling components introduced in the previous ALPHA release is expected to make 
+    development of asynchronous HTTP client agents and HTTP proxies easier and less error prone.
+
 * 19 August 2011 - HttpComponents HttpCore 4.2-alpha1 released
 
     This is the first ALPHA release of the 4.2 development branch. The most notable feature 
