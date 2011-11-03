@@ -30,6 +30,26 @@
 
 HttpComponents Project News 
 
+* 3 November 2011 - HttpComponents HttpClient 4.2-alpha1 released
+
+    This is the first ALPHA release of HttpClient 4.2. The 4.2 branch enhances HttpClient in several
+    key areas and includes several notable features and improvements:
+
+    * New facade API for HttpClient based on the concept of a fluent interface. The fluent API 
+      exposes only the most fundamental functions of HttpClient and is intended for relatively 
+      simple use cases that do not require the full flexibility of HttpClient. However, the fluent 
+      API almost fully relieves the users from having to deal with connection management and 
+      resource deallocation.
+
+    * Redesigned and rewritten connection management code. As of release 4.2 HttpClient will be 
+      using pooling connection manager per default.
+
+    * Enhanced HTTP authentication API that enables HttpClient to handle more complex authentication
+      scenarios. HttpClient 4.2 is now capable of making use of multiple authentication challenges
+      and retry authentication with a fall-back scheme in case the primary one fails. This can be
+      important for compatibility with Microsoft products that are often configured to use
+      SPNEGO/Kerberos as the preferred authentication scheme.
+
 * 29 September 2011 - HttpComponents HttpAsyncClient 4.0-alpha3 released
 
     This is the third ALPHA release of HttpAsyncClient 4.0. This release which largely completes 
