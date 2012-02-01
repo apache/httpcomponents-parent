@@ -30,6 +30,14 @@
 
 HttpComponents Project News 
 
+* 1 February 2012 - HttpComponents HttpCore 4.2-beta1 released
+
+    This is the first BETA release of HttpCore 4.2. This release ships with an improved 
+    asynchronous protocol handling API and new non-blocking client and server HTTP protocol handler 
+    implementations. New API is expected to be more flexible especially for writing HTTP proxy or 
+    gateway type of services. Upstream projects are encouraged to evaluate the new API and 
+    give feedback.
+
 * 23 December 2011 - HttpComponents HttpCore 4.1.4 (GA) released
 
     HttpCore 4.1.4 is a patch release that fixes a number of bugs found since 4.1.3. It is also 
