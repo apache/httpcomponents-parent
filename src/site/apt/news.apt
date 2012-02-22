@@ -30,6 +30,13 @@
 
 HttpComponents Project News 
 
+* 22 February 2011 - HttpComponents HttpAsyncClient 4.0-beta1 released
+
+    This the first BETA release of HttpAsyncClient. This release completes the application 
+    programming interface and the feature set of HttpAsyncClient and upgrades to the latest 
+    versions of core and client components (HttpCore 4.2-beta1 and HttpClient 4.2-beta1). 
+    As of this release HttpAsyncClient is expected to be API stable.
+
 * 10 February 2011 - HttpComponents HttpClient 4.2-beta1 released
 
     This is the first BETA release of HttpClient 4.2. This release completes development of several
@@ -90,7 +97,7 @@ HttpComponents Project News
 
 * 29 September 2011 - HttpComponents HttpAsyncClient 4.0-alpha3 released
 
-    This is the third ALPHA release of HttpAsyncClient 4.0. This release which largely completes 
+    This is the third ALPHA release of HttpAsyncClient 4.0. This release largely completes 
     the application programming interface and feature set of HttpAsyncClient. While the API may 
     still change in the course of the ALPHA development phase, this is expected to be the last 
     round of major API changes and the API is expected to be reasonably stable as of this release.
