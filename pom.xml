@@ -73,7 +73,7 @@
       <id>olegk</id>
       <email>olegk -at- apache.org</email>
       <roles>
-        <role>Java Developer</role>
+        <role>Committer</role>
         <role>PMC</role>
       </roles>
       <timezone>+1</timezone>
@@ -83,7 +83,7 @@
       <id>asankha</id>
       <email>asankha -at- apache.org</email>
       <roles>
-        <role>Java Developer</role>
+        <role>Committer</role>
         <role>PMC Chair</role>
       </roles>
       <url>http://www.adroitlogic.org/</url>
@@ -94,7 +94,7 @@
       <id>sebb</id>
       <email>sebb -at- apache.org</email>
       <roles>
-        <role>Java Developer</role>
+        <role>Committer</role>
         <role>PMC</role>
       </roles>
       <timezone></timezone>
@@ -104,7 +104,7 @@
       <id>erikabele</id>
       <email>erikabele -at- apache.org</email>
       <roles>
-        <role>Java Developer</role>
+        <role>Committer</role>
         <role>PMC</role>
       </roles>
       <url>http://www.codefaktor.de/</url>
@@ -115,7 +115,7 @@
       <id>antelder</id>
       <email>antelder -at- apache.org</email>
       <roles>
-        <role>Java Developer</role>
+        <role>Committer</role>
         <role>PMC</role>
       </roles>
       <timezone></timezone>
@@ -125,7 +125,7 @@
       <id>pzf</id>
       <email>pzf -at- apache.org</email>
       <roles>
-        <role>Java Developer</role>
+        <role>Committer</role>
         <role>PMC</role>
       </roles>
       <timezone></timezone>
@@ -163,6 +163,7 @@
       <email>jonm -at- apache.org</email>
       <roles>
         <role>Committer</role>
+        <role>PMC</role>
       </roles>
       <timezone>-5</timezone>
     </developer>
@@ -532,6 +533,7 @@
   <modules>
     <module>../httpcore</module>
     <module>../httpclient</module>
+    <module>../httpasyncclient</module>
   </modules>
 
  <profiles>
