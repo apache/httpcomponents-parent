@@ -312,27 +312,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
       </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>buildnumber-maven-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>create</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <!-- Use committed revision so it does not change every time svn update is run -->
-          <useLastCommittedRevision>true</useLastCommittedRevision>
-          <!-- default revision number if unavailable -->
-          <revisionOnScmFailure>??????</revisionOnScmFailure>
-          <doCheck>false</doCheck>
-          <doUpdate>false</doUpdate>
-        </configuration>
-      </plugin>
     </plugins>
 
     <pluginManagement>
@@ -612,6 +591,40 @@
         </plugins>
       </build>
     </profile>
+
+    <!-- 
+        Automatically run the buildnumber plugin unless the buildNumber.skip property is defined as true
+    -->
+    <profile>
+     <id>svn-buildnumber</id>
+     <activation>
+       <property><name>!buildNumber.skip</name><value>!true</value></property>
+     </activation>
+     <build>
+       <plugins>
+         <plugin>
+           <groupId>org.codehaus.mojo</groupId>
+           <artifactId>buildnumber-maven-plugin</artifactId>
+           <executions>
+             <execution>
+               <phase>generate-resources</phase>
+               <goals>
+                 <goal>create</goal>
+               </goals>
+             </execution>
+           </executions>
+           <configuration>
+             <!-- Use committed revision so it does not change every time svn update is run -->
+             <useLastCommittedRevision>true</useLastCommittedRevision>
+             <!-- default revision number if unavailable -->
+             <revisionOnScmFailure>??????</revisionOnScmFailure>
+             <doCheck>false</doCheck>
+             <doUpdate>false</doUpdate>
+           </configuration>
+         </plugin>
+       </plugins>
+     </build>
+   </profile>
 
    <!-- optional profile to use javasvn instead of the SVN CLI for the buildNumber plugin -->
    <profile>
