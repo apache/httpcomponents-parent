@@ -329,10 +329,8 @@
           <useLastCommittedRevision>true</useLastCommittedRevision>
           <!-- default revision number if unavailable -->
           <revisionOnScmFailure>??????</revisionOnScmFailure>
-          <!-- svnjava works even if an svn command-line client is not on the path -->
-          <providerImplementations>
-            <svn>javasvn</svn>
-          </providerImplementations>
+          <doCheck>false</doCheck>
+          <doUpdate>false</doUpdate>
         </configuration>
       </plugin>
     </plugins>
@@ -614,6 +612,24 @@
         </plugins>
       </build>
     </profile>
+
+   <!-- optional profile to use javasvn instead of the SVN CLI for the buildNumber plugin -->
+   <profile>
+     <id>javasvn</id>
+     <build>
+       <plugins>
+         <plugin>
+           <groupId>org.codehaus.mojo</groupId>
+           <artifactId>buildnumber-maven-plugin</artifactId>
+           <configuration>
+             <providerImplementations>
+               <svn>javasvn</svn>
+             </providerImplementations>
+           </configuration>
+         </plugin>
+       </plugins>
+     </build>
+   </profile>
 
  </profiles>
 
