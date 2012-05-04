@@ -30,6 +30,20 @@
 
 HttpComponents Project News 
 
+* 5 May 2012 - HttpComponents HttpClient 4.2 (GA) released
+
+    This is the first stable (GA) release of HttpCore 4.2. The most notable features included in 
+    this release are connection pool components for blocking and non-blocking HTTP connections and 
+    new asynchronous client and server side protocol handlers.
+
+    New protocol handling API used in conjunction with connection pooling components is expected to 
+    make development of asynchronous HTTP client agents and HTTP proxies easier and less error 
+    prone.
+
+    Connection pool components are based on mature code migrated from HttpClient and HttpAsyncClient 
+    modules but have a slightly different API that makes a better use of Java standard concurrent 
+    primitives. 
+
 * 22 February 2011 - HttpComponents HttpAsyncClient 4.0-beta1 released
 
     This the first BETA release of HttpAsyncClient. This release completes the application 
