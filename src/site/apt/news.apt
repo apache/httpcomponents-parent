@@ -30,7 +30,7 @@
 
 HttpComponents Project News 
 
-* 5 May 2012 - HttpComponents HttpClient 4.2 (GA) released
+* 5 May 2012 - HttpComponents HttpCore 4.2 (GA) released
 
     This is the first stable (GA) release of HttpCore 4.2. The most notable features included in 
     this release are connection pool components for blocking and non-blocking HTTP connections and 
