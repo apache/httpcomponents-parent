@@ -30,6 +30,11 @@
 
 HttpComponents Project News 
 
+* 14 June 2011 - HttpComponents HttpCore 4.2.1 (GA) released
+
+    HttpCore 4.2.1 is a patch release that fixes a number of non-critical bugs found since 4.2.
+    Users of HttpCore 4.2 are advised to upgrade.
+
 * 22 May 2012 - HttpComponents HttpClient 4.2 (GA) released
 
     This is the first stable (GA) release of HttpClient 4.2. The most notable enhancements included 
