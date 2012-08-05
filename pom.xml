@@ -183,6 +183,15 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
       </roles>
       <timezone>-5</timezone>
     </developer>
+    <developer>
+      <name>Gary Gregory</name>
+      <id>ggregory</id>
+      <email>ggregory -at- apache.org</email>
+      <timezone>-5</timezone>
+      <roles>
+        <role>Committer</role>
+      </roles>
+    </developer>
   </developers>
 
   <contributors>
