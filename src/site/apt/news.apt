@@ -30,6 +30,20 @@
 
 HttpComponents Project News 
 
+* 8 August 2011 - HttpComponents HttpAsyncClient 4.0-beta2 released
+
+    This release fixes a number of non-critical issues found since release 4.0-beta1 and 
+    introduces basic support for HTTP/1.1 response caching. Please note that caching for streaming 
+    HTTP exchanges is currently not supported.
+
+* 4 August 2012 - Welcome new HttpComponents committer Gary Gregory 
+
+    By 5 binding votes in favor Gary Gregory has been unanimously voted in as a new 
+    HttpComponents committer. Gary is already a committer on Apache Commons, Logging and Xalan
+    projects.
+
+    Welcome on board, Gary!
+
 * 5 July 2012 - HttpComponents HttpClient 4.2.1 (GA) released
 
     HttpClient 4.2.1 is a bug fix release that addresses a number of issues reported since 
@@ -73,14 +87,14 @@ HttpComponents Project News
     modules but have a slightly different API that makes a better use of Java standard concurrent 
     primitives. 
 
-* 22 February 2011 - HttpComponents HttpAsyncClient 4.0-beta1 released
+* 22 February 2012 - HttpComponents HttpAsyncClient 4.0-beta1 released
 
     This the first BETA release of HttpAsyncClient. This release completes the application 
     programming interface and the feature set of HttpAsyncClient and upgrades to the latest 
     versions of core and client components (HttpCore 4.2-beta1 and HttpClient 4.2-beta1). 
     As of this release HttpAsyncClient is expected to be API stable.
 
-* 10 February 2011 - HttpComponents HttpClient 4.2-beta1 released
+* 10 February 2012 - HttpComponents HttpClient 4.2-beta1 released
 
     This is the first BETA release of HttpClient 4.2. This release completes development of several
     notable enhancements in HttpClient: new facade API, redesigned connection management code 
@@ -217,6 +231,14 @@ HttpComponents Project News
     with JREs that have a naive (broken) implementation of SelectionKey API and also improves
     compatibility with the Google Android platform. There has also been a number of performance 
     related improvements and bug fixes in both blocking and non-blocking components.
+
+* 26 October 2010 - Welcome new HttpComponents committer Jonathan Moore 
+
+    By 4 binding votes in favor and none against Jonathan Moore has been voted in as a new 
+    HttpComponents committer. Jonathan has made major contributions to the new HttpClient caching
+    module.
+
+    Welcome on board, Jonathan!
 
 * 19 September 2010 - HttpComponents HttpClient 4.0.3 (GA) released
 
