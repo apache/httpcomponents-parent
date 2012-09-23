@@ -30,6 +30,19 @@
 
 HttpComponents Project News 
 
+* 23 September 2012 - HttpComponents HttpCore 4.2.2 (GA) released
+
+    This is a maintenance release that fixes a number of bugs and regressions found since 4.2.1
+    including a major bug in the NIO module causing incorrect handling of outgoing Content-Length
+    delimited messages larger than 2GB. Users of HttpCore 4.2 are advised to upgrade.
+
+* 29 August 2012 - Welcome new HttpComponents committer William Speirs 
+
+    William Speirs, a long time contributor to the project, has been unanimously voted in as 
+    a new HttpComponents committer. William is already a committer on Apache Commons project.
+
+    Welcome on board, William!
+
 * 8 August 2011 - HttpComponents HttpAsyncClient 4.0-beta2 released
 
     This release fixes a number of non-critical issues found since release 4.0-beta1 and 
