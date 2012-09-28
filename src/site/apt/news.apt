@@ -30,6 +30,10 @@
 
 HttpComponents Project News 
 
+* 29 September 2012 - HttpComponents HttpAsyncClient 4.0-beta3 released
+
+    This is a maintenance release that picks up the latest bug fixes in the core components.
+
 * 23 September 2012 - HttpComponents HttpCore 4.2.2 (GA) released
 
     This is a maintenance release that fixes a number of bugs and regressions found since 4.2.1
