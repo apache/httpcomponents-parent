@@ -30,6 +30,11 @@
 
 HttpComponents Project News 
 
+* 25 October 2012 - HttpComponents HttpClient 4.2.2 (GA) released
+
+    HttpClient 4.2.2 is a bug fix release that addresses a number of issues reported since 
+    release 4.2.1. Users of HttpClient 4.2 are advised to upgrade.
+
 * 29 September 2012 - HttpComponents HttpAsyncClient 4.0-beta3 released
 
     This is a maintenance release that picks up the latest bug fixes in the core components.
