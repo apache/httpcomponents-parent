@@ -665,6 +665,12 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
  </profiles>
 
  <properties>
+   <maven.compile.source>1.5</maven.compile.source>
+   <maven.compile.target>1.5</maven.compile.target>
+   <maven.compile.optimize>true</maven.compile.optimize>
+   <maven.compile.deprecation>true</maven.compile.deprecation>
+   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
    <!-- Define the Clover version here - it's needed in pluginManagement here and the reporting sections in modules -->
    <!-- N.B. It appears that the latest version for which the ASF has a licence is 2.6.3 -->
    <!-- TODO - try 3.1.0 -->
@@ -676,11 +682,11 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
    <hc.surefire-report.version>2.9</hc.surefire-report.version>
    <hc.project-info.version>2.4</hc.project-info.version>
 
-    <!-- build meta inf -->
-    <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssZ</maven.build.timestamp.format>
-    <implementation.build>${scmBranch}@r${buildNumber}; ${maven.build.timestamp}</implementation.build>
+   <!-- build meta inf -->
+   <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssZ</maven.build.timestamp.format>
+   <implementation.build>${scmBranch}@r${buildNumber}; ${maven.build.timestamp}</implementation.build>
 
-    <!-- Allow Clirr severity to be overriden by the command-line option -DminSeverity=level -->
-    <minSeverity>info</minSeverity>
+   <!-- Allow Clirr severity to be overriden by the command-line option -DminSeverity=level -->
+   <minSeverity>info</minSeverity>
  </properties>
 </project>
