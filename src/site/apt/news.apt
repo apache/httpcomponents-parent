@@ -30,6 +30,20 @@
 
 HttpComponents Project News 
 
+* 30 November 2012 - HttpComponents HttpCore 4.3-alpha1 released
+
+    This is the first release from the 4.3.x release branch. The main theme of the 4.3 release
+    series is streamlining of component configuration and deprecation of the old configuration
+    API based on HttpParams in favor of constructor-based dependency injection and plain objects 
+    for configuration parameters.
+
+* 30 November 2012 - HttpComponents HttpCore 4.2.3 (GA) released
+
+    HttpCore 4.2.3 is a maintenance release that fixes a number of bugs found since 4.2.2 
+    including a major bug in the NIO module that can cause an infinite loop in SSL sessions 
+    under special circumstances when the remote peer terminates the session in the middle of 
+    SSL handshake. We advise users of HttpCore NIO of all versions to upgrade.
+
 * 25 October 2012 - HttpComponents HttpClient 4.2.2 (GA) released
 
     HttpClient 4.2.2 is a bug fix release that addresses a number of issues reported since 

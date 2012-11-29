@@ -80,6 +80,7 @@
     <menu name="Components">
       <item name="HttpClient (GA)" href="httpcomponents-client-ga/index.html"/>
       <item name="HttpCore (GA)" href="httpcomponents-core-ga/index.html"/>
+      <item name="HttpCore (DEV)" href="httpcomponents-core-dev/index.html"/>
       <item name="HttpAsyncClient (DEV)" href="httpcomponents-asyncclient-dev/index.html"/>
     </menu>
     <menu name="Legacy">
