@@ -81,3 +81,13 @@ Powered by HttpComponents
     {{{http://esbperformance.org} ESB performance}}. Apache HttpComponents is a key 
     component of the UltraESB and its SOA ToolBox, and utilizes the excellent Zero-Copy 
     and NIO support features of HttpComponents NIO
+
+* Apache ManifoldCF
+
+    The {{{http://manifoldcf.apache.org}Apache ManifoldCF}} project uses HttpCore
+    and HttpClient for many of its repository and output connectors. These are connectors
+    to repositories like Microsoft SharePoint and OpenText LiveLink, as well as output
+    connectors for Elastic Search and Open Search Server.  ManifoldCF also uses HttpComponents
+    libraries for crawling the open web.
+
+
