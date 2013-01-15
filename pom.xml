@@ -192,6 +192,24 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
         <role>Committer</role>
       </roles>
     </developer>
+    <developer>
+      <name>William Speirs</name>
+      <id>wspeirs</id>
+      <email>wspeirs at apache.org</email>
+      <roles>
+        <role>Committer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+    <developer>
+      <name>Karl Wright</name>
+      <id>kwright</id>
+      <email>kwright -at- apache.org</email>
+      <roles>
+        <role>Committer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
   </developers>
 
   <contributors>
@@ -278,17 +296,17 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
     <repository>
       <id>apache.releases.https</id>
       <name>Apache Release Distribution Repository</name>
-      <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+      <url>${asf.repository.url}</url>
     </repository>
     <snapshotRepository>
       <id>apache.snapshots.https</id>
       <name>Apache Development Snapshot Repository</name>
-      <url>https://repository.apache.org/content/repositories/snapshots</url>
+      <url>${asf.snapshotRepository.url}</url>
     </snapshotRepository>
     <site>
       <id>apache.website</id>
       <name>Apache Website</name>
-      <url>scp://people.apache.org/www/hc.apache.org/</url>
+      <url>${asf.site.url}</url>
     </site>
   </distributionManagement>
 
@@ -671,6 +689,10 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
    <maven.compile.deprecation>true</maven.compile.deprecation>
    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+   <asf.repository.url>https://repository.apache.org/service/local/staging/deploy/maven2</asf.repository.url>
+   <asf.snapshotRepository.url>https://repository.apache.org/content/repositories/snapshots</asf.snapshotRepository.url>
+   <asf.site.url>scp://people.apache.org/www/hc.apache.org/</asf.site.url>
+
    <!-- Define the Clover version here - it's needed in pluginManagement here and the reporting sections in modules -->
    <!-- N.B. It appears that the latest version for which the ASF has a licence is 2.6.3 -->
    <!-- TODO - try 3.1.0 -->
