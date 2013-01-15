@@ -30,6 +30,20 @@
 
 HttpComponents Project News 
 
+*  15 January 2013 - HttpComponents HttpClient 4.2.3 (GA) released
+
+    This is a bug fix release that addresses a number of issues reported since release 4.2.2. 
+    This release also includes a thoroughly reworked NTLM authentication engine which should 
+    result in a better compatibility with the newest Microsoft products. 
+
+*  08 Dec 2012 - Welcome new HttpComponents committer Karl Wright 
+
+    Karl Wright has been unanimously voted in as a new HttpComponents committer due to his
+    invaluable help in supporting the internal NTLM engine and NTLM related authentication code.  
+    Karl is a committer on a number of ASF projects: Lucene, Lucene connectors, Incubator.
+
+    Welcome on board, Karl!
+
 * 30 November 2012 - HttpComponents HttpCore 4.3-alpha1 released
 
     This is the first release from the 4.3.x release branch. The main theme of the 4.3 release
