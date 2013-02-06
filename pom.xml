@@ -30,8 +30,7 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <!-- Versions 10-12 are broken; see https://issues.apache.org/jira/browse/MPOM-32 -->
-    <version>9</version>
+    <version>13</version>
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>project</artifactId>
@@ -48,6 +47,7 @@ Version 7 - changes since version 6
 ===================================
 
 Added Maven pre-requisite of 3.0.3 (minimum)
+Apache parent POM => 13
 Clirr 2.3 => 2.5
 Buildnumber 1.0 => 1.2
 Clover 2.6.3 => 3.1.10
