@@ -222,6 +222,15 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
       </roles>
       <timezone>-5</timezone>
     </developer>
+    <developer>
+      <name>Francois-Xavier Bonnet</name>
+      <id>fx</id>
+      <email>fx -at- apache.org</email>
+      <roles>
+        <role>Committer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
   </developers>
 
   <contributors>
