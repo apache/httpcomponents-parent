@@ -30,6 +30,22 @@
 
 HttpComponents Project News 
 
+*  25 March 2013 - HttpComponents HttpCore 4.3-beta1 released
+
+    This is the first BETA release from the 4.3 release branch. The main theme of the 4.3 release
+    series is streamlining of component configuration and deprecation of the old configuration
+    API based on HttpParams in favor of constructor-based dependency injection and plain objects 
+    for configuration parameters.
+
+    This release also includes performance optimizations intended to reduce TCP packet 
+    fragmentation when writing out HTTP messages both in blocking and non-blocking I/O modes, 
+    which should result  in up to 20% higher throughput for short entity enclosing messages.
+
+*  25 March 2013 - HttpComponents HttpCore 4.2.4 released
+
+    This is a maintenance release that fixes a number of bugs found in NIO components since 4.2.3. 
+    We advise users of HttpCore NIO of all versions to upgrade.
+
 *  21 January 2013 - HttpComponents HttpClient 4.3-alpha1 released
 
     This is the first ALPHA release of HttpClient 4.3. The 4.3 branch enhances HttpClient in 
