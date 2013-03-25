@@ -52,6 +52,7 @@ Clirr 2.3 => 2.5
 Buildnumber 1.0 => 1.2
 Clover 2.6.3 => 3.1.10
 Stylecheck = 2.9.1
+Clover 3.1.10 => 3.1.10.1
 
 Changes since previous version (5)
 ==============================
@@ -516,11 +517,6 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
           <version>2.0.13</version>
         </plugin>
         <plugin>
-          <groupId>com.atlassian.maven.plugins</groupId>
-          <artifactId>maven-clover2-plugin</artifactId>
-          <version>${clover.version}</version>
-        </plugin>
-        <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
           <version>2.3.7</version>
@@ -704,7 +700,7 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
           <plugin>
             <groupId>com.atlassian.maven.plugins</groupId>
             <artifactId>maven-clover2-plugin</artifactId>
-            <version>3.1.10</version>
+            <version>3.1.10.1</version>
             <configuration>
               <flushPolicy>threaded</flushPolicy>
               <flushInterval>100</flushInterval>
@@ -728,7 +724,7 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
           <plugin>
             <groupId>com.atlassian.maven.plugins</groupId>
             <artifactId>maven-clover2-plugin</artifactId>
-            <version>3.1.10</version>
+            <version>3.1.10.1</version>
             <configuration>
               <jdk>1.5</jdk>
             </configuration>
