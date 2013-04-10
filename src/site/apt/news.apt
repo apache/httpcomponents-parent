@@ -30,6 +30,38 @@
 
 HttpComponents Project News 
 
+*  11 April 2013 - HttpComponents HttpClient 4.3-beta1 released
+
+    This is the first BETA release of HttpClient 4.3. The 4.3 branch enhances HttpClient in several
+    key areas and includes several notable features and improvements:
+
+    * Support for Java 7 try-with-resources for resource management (connection release.)
+
+    * Added fluent Builder classes for HttpEntity, HttpRequest and HttpClient instances. 
+
+    * Deprecation of preference and configuration API based on HttpParams interface in favor of
+    constructor injection and plain configuration objects.
+
+    * Reliance on object immutability instead of access synchronization for thread safety. 
+    Several old classes whose instances can be shared by multiple request exchanges have
+    been replaced by immutable equivalents. 
+
+    * DefaultHttpClient,  DecompressingHttpClient, CachingHttpClient and similar classes are 
+    deprecated in favor of builder classes that produce immutable HttpClient instances. 
+
+    * HttpClient builders now dynamically construct a request execution pipeline tailored 
+    specifically to the user configuration by physically excluding unnecessary protocol components.
+
+    * There is now an option to construct a minimal HttpClient implementation that can only execute 
+    basic HTTP message exchanges without redirects, authentication, state management or proxy support.
+    This feature might be of particular use in web crawler development. 
+
+    * There is now option to avoid strict URI syntax for request URIs by executing HTTP requests 
+    with an explicitly specified target host. HttpClient will no longer attempt to parse the request 
+    URI if it does not need to extract the target host from it.
+
+    This release also includes all fixes from the stable 4.2.x release branch.
+
 *  11 April 2013 - HttpComponents HttpClient 4.2.4 (GA) released
 
     This is a bug fix release that addresses a number of issues reported since release 4.2.3. 
@@ -53,32 +85,11 @@ HttpComponents Project News
 *  21 January 2013 - HttpComponents HttpClient 4.3-alpha1 released
 
     This is the first ALPHA release of HttpClient 4.3. The 4.3 branch enhances HttpClient in 
-    several key areas and includes several notable features and improvements:
-
-    * Support for Java 7 try-with-resources for resource management (connection release.)
-
-    * Added fluent Builder classes for HttpEntity, HttpRequest and HttpClient instances. 
-
-    * Deprecation of preference and configuration API based on HttpParams interface in favor of
-    constructor injection and plain configuration objects.
-
-    * Reliance on object immutability instead of access synchronization for thread safety. 
-    Several old classes whose instances can be shared by multiple request exchanges have
-    been replaced by immutable equivalents. 
-
-    * DefaultHttpClient,  DecompressingHttpClient, CachingHttpClient and similar classes are 
-    deprecated in favor of builder classes that produce immutable HttpClient instances. 
-
-    * HttpClient builders now dynamically construct a request execution pipeline tailored 
-    specifically to the user configuration by physically excluding unnecessary protocol components.
-
-    * There is now an option to construct a minimal HttpClient implementation that can only execute 
-    basic HTTP message exchanges without redirects, authentication, state management or proxy 
-    support. This feature might be of particular use in web crawler development. 
-
-    * There is now option to avoid strict URI syntax for request URIs by executing HTTP requests 
-    with an explicitly specified target host. HttpClient will no longer attempt to parse the 
-    request URI if it does not need to extract the target host from it.
+    several key areas and includes several notable features and improvements: Support for Java 7 
+    try-with-resources for resource management (connection release); fluent Builder classes for 
+    HttpEntity, HttpRequest and HttpClient instances, deprecation of preference and configuration
+    API based on HttpParams interface in favor of constructor injection and plain configuration 
+    objects, reliance on object immutability instead of access synchronization for thread safety.
 
 *  15 January 2013 - HttpComponents HttpClient 4.2.3 (GA) released
 
