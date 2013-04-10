@@ -30,6 +30,10 @@
 
 HttpComponents Project News 
 
+*  11 April 2013 - HttpComponents HttpClient 4.2.4 (GA) released
+
+    This is a bug fix release that addresses a number of issues reported since release 4.2.3. 
+
 *  25 March 2013 - HttpComponents HttpCore 4.3-beta1 released
 
     This is the first BETA release from the 4.3 release branch. The main theme of the 4.3 release
