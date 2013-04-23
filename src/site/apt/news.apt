@@ -30,7 +30,7 @@
 
 HttpComponents Project News 
 
-*  24 April 2013 - HttpComponents HttpClient 4.2.4 (GA) released
+*  24 April 2013 - HttpComponents HttpClient 4.2.5 (GA) released
 
     This is a maintenance release that addresses a number of issues reported since release 4.2.4 
     including a major bug that can lead to re-use of persistent connections in a inconsistent state.
