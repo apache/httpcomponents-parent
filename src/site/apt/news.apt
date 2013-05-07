@@ -28,7 +28,13 @@
     ----------
     ----------
 
-HttpComponents Project News 
+HttpComponents Project News
+
+* 8 May - HttpComponents HttpCore 4.3-beta2 released
+
+    This is the second BETA release from the 4.3.x release branch. This release addresses 
+    performance issues in the non-blocking connection pool implementation and also includes 
+    a number of performance improvements in the low level NIO based transport components.
 
 *  24 April 2013 - HttpComponents HttpClient 4.2.5 (GA) released
 
