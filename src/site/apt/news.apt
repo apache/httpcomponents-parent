@@ -30,6 +30,13 @@
 
 HttpComponents Project News
 
+* 16 May - HttpComponents HttpAsyncClient 4.0-beta4 released
+
+    The 4.0 BETA4 release delivers significant performance improvements in request execution,
+    especially for short HTTP messages, and also re-aligns programming interfaces used by 
+    the library with HttpCore 4.3 and HttpClient 4.3 APIs. Configuration and preference APIs of 
+    HttpAsyncClient are now consistent with those used by HttpClient 4.3.
+
 * 8 May - HttpComponents HttpCore 4.3-beta2 released
 
     This is the second BETA release from the 4.3.x release branch. This release addresses 
