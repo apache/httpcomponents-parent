@@ -4,6 +4,7 @@ The POM currently references the following modules:
 
 ../httpcore
 ../httpclient
+../httpasyncclient
 
 which must be in the relevant directories.
 
