@@ -567,6 +567,32 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>2.9.1</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.httpcomponents</groupId>
+              <artifactId>hc-stylecheck</artifactId>
+              <version>1</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <encoding>UTF-8</encoding>
+          </configuration>
+          <executions>
+            <execution>
+              <id>validate</id>
+              <phase>validate</phase>
+              <configuration>
+                <configLocation>hc-stylecheck/default.xml</configLocation>
+                <headerLocation>hc-stylecheck/asl2.header</headerLocation>
+                <consoleOutput>true</consoleOutput>
+                <failsOnError>true</failsOnError>
+                <linkXRef>false</linkXRef>
+              </configuration>
+              <goals>
+                <goal>checkstyle</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
