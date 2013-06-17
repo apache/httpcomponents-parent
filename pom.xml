@@ -598,7 +598,7 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
             </dependency>
           </dependencies>
           <configuration>
-            <encoding>UTF-8</encoding>
+            <encoding>${project.build.sourceEncoding}</encoding>
           </configuration>
           <executions>
             <execution>
