@@ -47,8 +47,9 @@ Version 7 - changes since version 6
 ===================================
 
 Fixed maven.compile.* properties => maven.compiler.*
-Dropped configuration of compiler plugin as it automatically picks up the properties
-(now that they are spelt correctly!)
+Unfortunately cannot drop the configuration of compiler plugin as the Apache POM
+defines the source/target directly rather than using properties.
+See: https://issues.apache.org/jira/browse/MPOM-44
 
 Also maven.compile.deprecation => maven.compiler.showDeprecation
 
@@ -368,6 +369,17 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
 
   <build>
     <plugins>
+    <!--
+        Override the Apache POM which defines the source/target directly rather than using properties.
+         See: https://issues.apache.org/jira/browse/MPOM-44
+     -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${maven.compile.source}</source>
+          <target>${maven.compile.target}</target>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
