@@ -376,8 +376,8 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>${maven.compile.source}</source>
-          <target>${maven.compile.target}</target>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
         </configuration>
       </plugin>
       <plugin>
