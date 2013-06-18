@@ -56,7 +56,6 @@ Assembly 2.2.1 => 2.4
 Antrun 1.6 => 1.7
 Buildnumber 1.0 => 1.2
 Bundle 2.3.7 => 2.4.0
-Checkstyle 2.9.1 => 2.10
 Clean 2.4.1 => 2.5
 Clirr 2.3 => 2.5
 Clover2 2.6.3 => 3.1.11
@@ -589,7 +588,7 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>2.10</version>
+          <version>2.9.1</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.httpcomponents</groupId>
@@ -757,7 +756,7 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
           <plugin>
             <groupId>com.atlassian.maven.plugins</groupId>
             <artifactId>maven-clover2-plugin</artifactId>
-            <version>{hc.clover2.version}</version>
+            <version>${hc.clover2.version}</version>
             <configuration>
               <jdk>1.5</jdk>
             </configuration>
