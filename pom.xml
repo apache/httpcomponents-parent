@@ -72,7 +72,7 @@ Compiler 2.3.2 => 3.1
 Dokbkx 2.0.13 => 2.0.14
 Install 2.3.1 => 2.4
 Jar 2.3.2 => 2.4
-Javadoc 2.8 => 2.9
+Javadoc 2.8 => 2.9.1
 Project-Info 2.4 => 2.7
 Release 2.2.1 => 2.4.1
 Resources 2.5 => 2.6
@@ -797,7 +797,7 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
    <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
    <hc.clirr.version>2.5</hc.clirr.version>
    <hc.clover2.version>3.1.11</hc.clover2.version>
-   <hc.javadoc.version>2.9</hc.javadoc.version>
+   <hc.javadoc.version>2.9.1</hc.javadoc.version>
    <hc.jxr.version>2.3</hc.jxr.version>
    <hc.surefire-report.version>2.15</hc.surefire-report.version>
    <hc.surefire.version>2.15</hc.surefire.version>
