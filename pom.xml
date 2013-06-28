@@ -655,12 +655,6 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
     </plugins>
   </reporting>
 
-  <modules>
-    <module>../httpcore</module>
-    <module>../httpclient</module>
-    <module>../httpasyncclient</module>
-  </modules>
-
  <profiles>
    <profile>
      <id>release</id>
