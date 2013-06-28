@@ -34,7 +34,7 @@
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>project</artifactId>
-  <version>7-SNAPSHOT</version>
+  <version>7</version>
   <packaging>pom</packaging>
   <name>HttpComponents</name>
   <url>http://hc.apache.org/</url>
@@ -113,9 +113,9 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
   </issueManagement>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/httpcomponents/project-trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/httpcomponents/project-trunk</developerConnection>
-    <url>http://svn.apache.org/repos/asf/httpcomponents/project-trunk</url>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/httpcomponents/project/tags/7</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/httpcomponents/tags/7</developerConnection>
+    <url>http://svn.apache.org/repos/asf/httpcomponents/tags/7</url>
   </scm>
 
   <developers>
