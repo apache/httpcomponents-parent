@@ -99,6 +99,8 @@ Buildnumber plugin changes:
 Added default manifest entries to source jars
 
 Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue) 
+
+Fixed JIRA link
  -->
 
   <organization>
@@ -109,7 +111,7 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
   <issueManagement>
     <system>Jira</system>
     <!-- The following URL is for the HttpComponents group -->
-    <url>https://issues.apache.org/jira/secure/BrowseProjects.jspa#10280</url>
+    <url>https://issues.apache.org/jira/secure/BrowseProjects.jspa?selectedCategory=10280</url>
   </issueManagement>
 
   <scm>
