@@ -43,6 +43,12 @@
 
 
 <!--
+Version 8 - changes since version 7
+===================================
+
+Dropped definition of maven.compiler.(source|target).
+These must now be defined at component level.
+
 Version 7 - changes since version 6
 ===================================
 
