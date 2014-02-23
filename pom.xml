@@ -782,8 +782,7 @@ Fixed JIRA link
  </prerequisites>
 
  <properties>
-   <maven.compiler.source>1.5</maven.compiler.source>
-   <maven.compiler.target>1.5</maven.compiler.target>
+   <!-- compiler source and target must now be defined at component level -->
    <maven.compiler.optimize>true</maven.compiler.optimize>
    <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
