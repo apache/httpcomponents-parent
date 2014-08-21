@@ -36,9 +36,9 @@
   <artifactId>project</artifactId>
   <version>8-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>HttpComponents</name>
+  <name>Apache HttpComponents</name>
   <url>http://hc.apache.org/</url>
-  <description>Components to build HTTP enabled services</description>
+  <description>Apache components to build HTTP enabled services</description>
   <inceptionYear>2005</inceptionYear>
 
 
