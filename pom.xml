@@ -49,6 +49,12 @@ Version 8 - changes since version 7
 Dropped definition of maven.compiler.(source|target).
 These must now be defined at component level.
 
+Compiler 3.1 => 3.2
+Javadoc 2.9.1 => 2.10.1
+Surefire 2.15 => 2.17
+JXR 2.3 => 2.4
+Clirr 2.5 => 2.6.1
+
 Version 7 - changes since version 6
 ===================================
 
@@ -432,7 +438,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.1</version>
+          <version>3.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -797,12 +803,12 @@ Fixed JIRA link
    <hc.site.url>scp://people.apache.org/www/hc.apache.org/</hc.site.url>
 
    <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
-   <hc.clirr.version>2.5</hc.clirr.version>
+   <hc.clirr.version>2.6.1</hc.clirr.version>
    <hc.clover2.version>3.1.11</hc.clover2.version>
-   <hc.javadoc.version>2.9.1</hc.javadoc.version>
-   <hc.jxr.version>2.3</hc.jxr.version>
-   <hc.surefire-report.version>2.15</hc.surefire-report.version>
-   <hc.surefire.version>2.15</hc.surefire.version>
+   <hc.javadoc.version>2.10.1</hc.javadoc.version>
+   <hc.jxr.version>2.4</hc.jxr.version>
+   <hc.surefire-report.version>2.17</hc.surefire-report.version>
+   <hc.surefire.version>2.17</hc.surefire.version>
    <hc.project-info.version>2.7</hc.project-info.version>
 
    <!-- build meta inf -->
