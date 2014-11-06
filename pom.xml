@@ -819,7 +819,7 @@ Fixed JIRA link
    <hc.clirr.version>2.6.1</hc.clirr.version>
    <hc.clover2.version>3.1.11</hc.clover2.version>
    <hc.javadoc.version>2.10.1</hc.javadoc.version>
-   <hc.jxr.version>2.4</hc.jxr.version>
+   <hc.jxr.version>2.5</hc.jxr.version>
    <hc.surefire-report.version>2.17</hc.surefire-report.version>
    <hc.surefire.version>2.17</hc.surefire.version>
    <hc.project-info.version>2.7</hc.project-info.version>
