@@ -375,7 +375,7 @@ Fixed JIRA link
     </mailingList>
   </mailingLists>
 
- <distributionManagement>
+  <distributionManagement>
     <site>
       <id>apache.website</id>
       <name>Apache HttpComponents Website</name>
@@ -503,9 +503,9 @@ Fixed JIRA link
           <version>${hc.jxr.version}</version>
         </plugin>
         <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-project-info-reports-plugin</artifactId>
-           <version>${hc.project-info.version}</version><!-- needed for direct goal use -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>${hc.project-info.version}</version><!-- needed for direct goal use -->
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -663,129 +663,129 @@ Fixed JIRA link
 
   <reporting>
     <plugins>
-        <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-project-info-reports-plugin</artifactId>
-           <version>${hc.project-info.version}</version><!-- needed for mvn site -->
-           <!-- in particular, we don't want mailing-list to be inherited -->
-           <inherited>false</inherited>
-           <reportSets>
-             <reportSet>
-               <reports>
-                 <report>project-team</report>
-                 <report>issue-tracking</report>
-                 <report>scm</report>
-                 <report>mailing-list</report>
-               </reports>
-             </reportSet>
-           </reportSets>
-         </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>${hc.project-info.version}</version><!-- needed for mvn site -->
+        <!-- in particular, we don't want mailing-list to be inherited -->
+        <inherited>false</inherited>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>project-team</report>
+              <report>issue-tracking</report>
+              <report>scm</report>
+              <report>mailing-list</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
     </plugins>
   </reporting>
 
- <profiles>
+  <profiles>
 
-  <profile>
-    <!--
-      Make the version parts of the maven.compiler.target property
-      available as separate properties, so that they can be used to define
-      the java signature artifactId used by animal-sniffer etc.
+    <profile>
+      <!--
+        Make the version parts of the maven.compiler.target property
+        available as separate properties, so that they can be used to define
+        the java signature artifactId used by animal-sniffer etc.
+      -->
+      <id>parse-target-version</id>
+      <activation>
+        <property>
+          <!--
+             This property should always be defined.
+             The intention is to ensure that the profile is always enabled.
+             (activeByDefault only applies if other profiles are not enabled) 
+          -->
+          <name>user.home</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <version>1.9.1</version>
+            <executions>
+              <execution>
+                <id>parse-version</id>
+                <goals>
+                  <goal>parse-version</goal>
+                </goals>
+                <configuration>
+                  <propertyPrefix>javaTarget</propertyPrefix>
+                  <versionString>${maven.compiler.target}</versionString>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- 
+         Runs the Animal Sniffer plugin to check that generated code does not included references
+         to methods/classes etc that are not present in the standard Java runtime for the defined target version.
+         To bypass the checks, define "animal.sniffer.skip" as true, or create the file "src/site/resources/profile.noanimal" 
     -->
-    <id>parse-target-version</id>
-    <activation>
-      <property>
-        <!--
-           This property should always be defined.
-           The intention is to ensure that the profile is always enabled.
-           (activeByDefault only applies if other profiles are not enabled) 
-        -->
-        <name>user.home</name>
-      </property>
-    </activation>
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.9.1</version>
-          <executions>
-            <execution>
-              <id>parse-version</id>
-              <goals>
-                <goal>parse-version</goal>
-              </goals>
-              <configuration>
-                <propertyPrefix>javaTarget</propertyPrefix>
-                <versionString>${maven.compiler.target}</versionString>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </build>
-  </profile>
+  
+    <profile>
+      <id>animal-sniffer</id>
+      <activation>
+        <!--  active unless the file is found -->
+        <file>
+          <missing>src/site/resources/profile.noanimal</missing>
+        </file>
+      </activation>
+      
+      <properties>
+        <!-- define this as a property to allow command-line override -->
+        <animal-sniffer.signature>java${javaTarget.majorVersion}${javaTarget.minorVersion}</animal-sniffer.signature>
+      </properties>
+  
+      <build>
+        <plugins>
+  
+          <!-- Run the Animal Sniffer checks -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>animal-sniffer-maven-plugin</artifactId>
+            <version>${hc.animal-sniffer.version}</version>
+            <executions>
+              <execution>
+                <id>checkAPIcompatibility</id>
+                <phase>test</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <signature>
+                <groupId>org.codehaus.mojo.signature</groupId>
+                <artifactId>${animal-sniffer.signature}</artifactId>
+                <version>${hc.animal-sniffer.signature.version}</version>
+              </signature>
+            </configuration>
+          </plugin>
+  
+        </plugins>
+      </build>
+    </profile>
 
-  <!-- 
-       Runs the Animal Sniffer plugin to check that generated code does not included references
-       to methods/classes etc that are not present in the standard Java runtime for the defined target version.
-       To bypass the checks, define "animal.sniffer.skip" as true, or create the file "src/site/resources/profile.noanimal" 
-  -->
-
-  <profile>
-    <id>animal-sniffer</id>
-    <activation>
-      <!--  active unless the file is found -->
-      <file>
-        <missing>src/site/resources/profile.noanimal</missing>
-      </file>
-    </activation>
-    
-    <properties>
-      <!-- define this as a property to allow command-line override -->
-      <animal-sniffer.signature>java${javaTarget.majorVersion}${javaTarget.minorVersion}</animal-sniffer.signature>
-    </properties>
-
-    <build>
-      <plugins>
-
-        <!-- Run the Animal Sniffer checks -->
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>animal-sniffer-maven-plugin</artifactId>
-          <version>${hc.animal-sniffer.version}</version>
-          <executions>
-            <execution>
-              <id>checkAPIcompatibility</id>
-              <phase>test</phase>
-              <goals>
-                <goal>check</goal>
-              </goals>
-            </execution>
-          </executions>
-          <configuration>
-            <signature>
-              <groupId>org.codehaus.mojo.signature</groupId>
-              <artifactId>${animal-sniffer.signature}</artifactId>
-              <version>${hc.animal-sniffer.signature.version}</version>
-            </signature>
-          </configuration>
-        </plugin>
-
-      </plugins>
-    </build>
-  </profile>
-
-   <profile>
-     <id>release</id>
-     <build>
-       <plugins>
-         <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-gpg-plugin</artifactId>
-         </plugin>
-       </plugins>
-     </build>
-   </profile>
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <!-- 
      | Profile to allow testing of deploy phase
      | e.g.
@@ -802,53 +802,53 @@ Fixed JIRA link
         Automatically run the buildnumber plugin unless the buildNumber.skip property is defined as true
     -->
     <profile>
-     <id>svn-buildnumber</id>
-     <activation>
-       <property><name>!buildNumber.skip</name><value>!true</value></property>
-     </activation>
-     <build>
-       <plugins>
-         <plugin>
-           <groupId>org.codehaus.mojo</groupId>
-           <artifactId>buildnumber-maven-plugin</artifactId>
-           <executions>
-             <execution>
-               <phase>generate-resources</phase>
-               <goals>
-                 <goal>create</goal>
-               </goals>
-             </execution>
-           </executions>
-           <configuration>
-             <!-- Use committed revision so it does not change every time svn update is run -->
-             <useLastCommittedRevision>true</useLastCommittedRevision>
-             <!-- default revision number if unavailable -->
-             <revisionOnScmFailure>??????</revisionOnScmFailure>
-             <doCheck>false</doCheck>
-             <doUpdate>false</doUpdate>
-           </configuration>
-         </plugin>
-       </plugins>
-     </build>
-   </profile>
+      <id>svn-buildnumber</id>
+      <activation>
+        <property><name>!buildNumber.skip</name><value>!true</value></property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>buildnumber-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>generate-resources</phase>
+                <goals>
+                  <goal>create</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <!-- Use committed revision so it does not change every time svn update is run -->
+              <useLastCommittedRevision>true</useLastCommittedRevision>
+              <!-- default revision number if unavailable -->
+              <revisionOnScmFailure>??????</revisionOnScmFailure>
+              <doCheck>false</doCheck>
+              <doUpdate>false</doUpdate>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
 
-   <!-- optional profile to use javasvn instead of the SVN CLI for the buildNumber plugin -->
-   <profile>
-     <id>javasvn</id>
-     <build>
-       <plugins>
-         <plugin>
-           <groupId>org.codehaus.mojo</groupId>
-           <artifactId>buildnumber-maven-plugin</artifactId>
-           <configuration>
-             <providerImplementations>
-               <svn>javasvn</svn>
-             </providerImplementations>
-           </configuration>
-         </plugin>
-       </plugins>
-     </build>
-   </profile>
+    <!-- optional profile to use javasvn instead of the SVN CLI for the buildNumber plugin -->
+    <profile>
+      <id>javasvn</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>buildnumber-maven-plugin</artifactId>
+            <configuration>
+              <providerImplementations>
+                <svn>javasvn</svn>
+              </providerImplementations>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
 
     <!-- Optional Clover profile -->
     <profile>
@@ -895,37 +895,37 @@ Fixed JIRA link
 
 
 
- </profiles>
+  </profiles>
 
- <prerequisites>
-   <maven>3.0.3</maven>
- </prerequisites>
+  <prerequisites>
+    <maven>3.0.3</maven>
+  </prerequisites>
 
- <properties>
-   <!-- compiler source and target must now be defined at component level -->
-   <maven.compiler.optimize>true</maven.compiler.optimize>
-   <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
-   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-   <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-   <hc.site.url>scp://people.apache.org/www/hc.apache.org/</hc.site.url>
+  <properties>
+    <!-- compiler source and target must now be defined at component level -->
+    <maven.compiler.optimize>true</maven.compiler.optimize>
+    <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <hc.site.url>scp://people.apache.org/www/hc.apache.org/</hc.site.url>
 
-   <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
-   <hc.clirr.version>2.6.1</hc.clirr.version>
-   <hc.clover2.version>3.1.11</hc.clover2.version>
-   <hc.javadoc.version>2.10.1</hc.javadoc.version>
-   <hc.jxr.version>2.5</hc.jxr.version>
-   <hc.surefire-report.version>2.17</hc.surefire-report.version>
-   <hc.surefire.version>2.17</hc.surefire.version>
-   <hc.project-info.version>2.7</hc.project-info.version>
-   <hc.checkstyle.version>2.9.1</hc.checkstyle.version>
-   <!-- plugin versions 1.12 and 1.13 currently require Java 7 -->
-   <hc.animal-sniffer.version>1.11</hc.animal-sniffer.version>
-   <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
-   <!-- build meta inf -->
-   <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssZ</maven.build.timestamp.format>
-   <implementation.build>${scmBranch}@r${buildNumber}; ${maven.build.timestamp}</implementation.build>
+    <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
+    <hc.clirr.version>2.6.1</hc.clirr.version>
+    <hc.clover2.version>3.1.11</hc.clover2.version>
+    <hc.javadoc.version>2.10.1</hc.javadoc.version>
+    <hc.jxr.version>2.5</hc.jxr.version>
+    <hc.surefire-report.version>2.17</hc.surefire-report.version>
+    <hc.surefire.version>2.17</hc.surefire.version>
+    <hc.project-info.version>2.7</hc.project-info.version>
+    <hc.checkstyle.version>2.9.1</hc.checkstyle.version>
+    <!-- plugin versions 1.12 and 1.13 currently require Java 7 -->
+    <hc.animal-sniffer.version>1.11</hc.animal-sniffer.version>
+    <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
+    <!-- build meta inf -->
+    <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssZ</maven.build.timestamp.format>
+    <implementation.build>${scmBranch}@r${buildNumber}; ${maven.build.timestamp}</implementation.build>
 
-   <!-- Allow Clirr severity to be overriden by the command-line option -DminSeverity=level -->
-   <minSeverity>info</minSeverity>
- </properties>
+    <!-- Allow Clirr severity to be overriden by the command-line option -DminSeverity=level -->
+    <minSeverity>info</minSeverity>
+  </properties>
 </project>
