@@ -684,6 +684,97 @@ Fixed JIRA link
   </reporting>
 
  <profiles>
+
+  <profile>
+    <!--
+      Make the version parts of the maven.compiler.target property
+      available as separate properties, so that they can be used to define
+      the java signature artifactId used by animal-sniffer etc.
+    -->
+    <id>parse-target-version</id>
+    <activation>
+      <property>
+        <!--
+           This property should always be defined.
+           The intention is to ensure that the profile is always enabled.
+           (activeByDefault only applies if other profiles are not enabled) 
+        -->
+        <name>user.home</name>
+      </property>
+    </activation>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>1.9.1</version>
+          <executions>
+            <execution>
+              <id>parse-version</id>
+              <goals>
+                <goal>parse-version</goal>
+              </goals>
+              <configuration>
+                <propertyPrefix>javaTarget</propertyPrefix>
+                <versionString>${maven.compiler.target}</versionString>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </build>
+  </profile>
+
+  <!-- 
+       Runs the Animal Sniffer plugin to check that generated code does not included references
+       to methods/classes etc that are not present in the standard Java runtime for the defined target version.
+       To bypass the checks, define "animal.sniffer.skip" as true, or create the file "src/site/resources/profile.noanimal" 
+  -->
+
+  <profile>
+    <id>animal-sniffer</id>
+    <activation>
+      <!--  active unless the file is found -->
+      <file>
+        <missing>src/site/resources/profile.noanimal</missing>
+      </file>
+    </activation>
+    
+    <properties>
+      <!-- define this as a property to allow command-line override -->
+      <animal-sniffer.signature>java${javaTarget.majorVersion}${javaTarget.minorVersion}</animal-sniffer.signature>
+    </properties>
+
+    <build>
+      <plugins>
+
+        <!-- Run the Animal Sniffer checks -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>animal-sniffer-maven-plugin</artifactId>
+          <version>${hc.animal-sniffer.version}</version>
+          <executions>
+            <execution>
+              <id>checkAPIcompatibility</id>
+              <phase>test</phase>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <signature>
+              <groupId>org.codehaus.mojo.signature</groupId>
+              <artifactId>${animal-sniffer.signature}</artifactId>
+              <version>${hc.animal-sniffer.signature.version}</version>
+            </signature>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </build>
+  </profile>
+
    <profile>
      <id>release</id>
      <build>
@@ -801,6 +892,9 @@ Fixed JIRA link
 
     </profile>
 
+
+
+
  </profiles>
 
  <prerequisites>
@@ -824,7 +918,9 @@ Fixed JIRA link
    <hc.surefire.version>2.17</hc.surefire.version>
    <hc.project-info.version>2.7</hc.project-info.version>
    <hc.checkstyle.version>2.9.1</hc.checkstyle.version>
-
+   <!-- plugin versions 1.12 and 1.13 currently require Java 7 -->
+   <hc.animal-sniffer.version>1.11</hc.animal-sniffer.version>
+   <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
    <!-- build meta inf -->
    <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssZ</maven.build.timestamp.format>
    <implementation.build>${scmBranch}@r${buildNumber}; ${maven.build.timestamp}</implementation.build>
