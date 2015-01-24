@@ -711,6 +711,7 @@ Fixed JIRA link
             <executions>
               <execution>
                 <id>parse-version</id>
+                <!-- binds to the validate phase by default -->
                 <goals>
                   <goal>parse-version</goal>
                 </goals>
@@ -756,7 +757,7 @@ Fixed JIRA link
             <executions>
               <execution>
                 <id>checkAPIcompatibility</id>
-                <phase>test</phase>
+                <!-- binds to the process-classes phase by default -->
                 <goals>
                   <goal>check</goal>
                 </goals>
