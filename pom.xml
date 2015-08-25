@@ -919,6 +919,7 @@ Fixed JIRA link
     <hc.surefire.version>2.17</hc.surefire.version>
     <hc.project-info.version>2.7</hc.project-info.version>
     <hc.checkstyle.version>2.9.1</hc.checkstyle.version>
+    <hc.rat.version>0.11</hc.rat.version>
     <!-- plugin versions 1.12 and 1.13 currently require Java 7 -->
     <hc.animal-sniffer.version>1.11</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
