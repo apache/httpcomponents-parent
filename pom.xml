@@ -55,7 +55,7 @@ Surefire 2.15 => 2.17
 JXR 2.3 => 2.4
 Clirr 2.5 => 2.7
 maven-assembly-plugin 2.4 => 2.4.1
-maven-clean-plugin 2.5 => 2.6
+maven-clean-plugin 2.5 => 3.0.0
 maven-deploy-plugin 2.7 => 2.8.2
 maven-install-plugin 2.4 => 2.5.2
 maven-jar-plugin 2.4 => 2.5
@@ -446,7 +446,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>2.6</version>
+          <version>3.0.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
