@@ -58,7 +58,7 @@ Clirr 2.5 => 2.7
 maven-antrun-plugin 2.4.1 => 2.6
 maven-assembly-plugin 2.4 => 2.6
 maven-clean-plugin 2.5 => 3.0.0
-maven-compiler-plugin 3.1 => 3.3
+maven-compiler-plugin 3.1 => 3.5
 maven-deploy-plugin 2.7 => 2.8.2
 build-helper-maven-plugin 1.9.1 => 1.10
 maven-install-plugin 2.4 => 2.5.2
@@ -67,10 +67,12 @@ maven-javadoc-plugin 2.10.1 => 2.10.3
 maven-release-plugin 2.4.1 => 2.5.3
 maven-resources-plugin 2.6 => 2.7
 maven-site-plugin 3.3 => 3.4
+maven-surefire-plugin 2.19 -> 2.19.1
+maven-surefire-report-plugin 2.19 -> 2.19.1
 wagon-ssh 2.0 => 2.7
 maven-source-plugin 2.3 => 2.4
 docbkx-maven-plugin 2.14 => 2.15
-maven-bundle-plugin 2.4.0 => 2.5.4
+maven-bundle-plugin 2.4.0 => 3.0.1
 buildnumber-maven-plugin 1.2 => 1.4
 wagon-ssh 2.7 => 2.10
 
@@ -457,7 +459,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.3</version>
+          <version>3.5</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -601,7 +603,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>2.5.4</version>
+          <version>3.0.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-notice-plugin</artifactId>
@@ -921,12 +923,11 @@ Fixed JIRA link
     <hc.clover2.version>3.1.11</hc.clover2.version>
     <hc.javadoc.version>2.10.3</hc.javadoc.version>
     <hc.jxr.version>2.5</hc.jxr.version>
-    <hc.surefire-report.version>2.19</hc.surefire-report.version>
-    <hc.surefire.version>2.19</hc.surefire.version>
-    <hc.project-info.version>2.7</hc.project-info.version>
+    <hc.surefire-report.version>2.19.1</hc.surefire-report.version>
+    <hc.surefire.version>2.19.1</hc.surefire.version>
+    <hc.project-info.version>2.8.1</hc.project-info.version>
     <hc.checkstyle.version>2.9.1</hc.checkstyle.version>
     <hc.rat.version>0.11</hc.rat.version>
-    <!-- plugin versions 1.12 and up currently require Java 7 -->
     <hc.animal-sniffer.version>1.14</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
     <!-- build meta inf -->
