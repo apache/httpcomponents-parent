@@ -51,6 +51,7 @@ These must now be defined at component level.
 
 animal-sniffer-maven-plugin 1.11 => 1.14
 docbkx-maven-plugin 2.0.15 => 2.0.16
+hc.rat.version 0.11 -> 0.12
 Javadoc 2.9.1 => 2.10.4
 Surefire 2.15 => 2.19
 JXR 2.3 => 2.5
@@ -927,7 +928,7 @@ Fixed JIRA link
     <hc.surefire.version>2.19.1</hc.surefire.version>
     <hc.project-info.version>2.8.1</hc.project-info.version>
     <hc.checkstyle.version>2.9.1</hc.checkstyle.version>
-    <hc.rat.version>0.11</hc.rat.version>
+    <hc.rat.version>0.12</hc.rat.version>
     <hc.animal-sniffer.version>1.14</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
     <!-- build meta inf -->
