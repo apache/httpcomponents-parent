@@ -51,7 +51,7 @@ These must now be defined at component level.
 
 animal-sniffer-maven-plugin 1.11 => 1.14
 docbkx-maven-plugin 2.0.15 => 2.0.16
-Javadoc 2.9.1 => 2.10.1
+Javadoc 2.9.1 => 2.10.4
 Surefire 2.15 => 2.19
 JXR 2.3 => 2.5
 Clirr 2.5 => 2.7
@@ -921,7 +921,7 @@ Fixed JIRA link
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
     <hc.clirr.version>2.7</hc.clirr.version>
     <hc.clover2.version>3.1.11</hc.clover2.version>
-    <hc.javadoc.version>2.10.3</hc.javadoc.version>
+    <hc.javadoc.version>2.10.4</hc.javadoc.version>
     <hc.jxr.version>2.5</hc.jxr.version>
     <hc.surefire-report.version>2.19.1</hc.surefire-report.version>
     <hc.surefire.version>2.19.1</hc.surefire.version>
