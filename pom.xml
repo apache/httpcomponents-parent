@@ -716,7 +716,7 @@ Fixed JIRA link
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
-            <version>1.10</version>
+            <version>1.12</version>
             <executions>
               <execution>
                 <id>parse-version</id>
