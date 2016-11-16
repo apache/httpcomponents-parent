@@ -752,7 +752,7 @@ Fixed JIRA link
       
       <properties>
         <!-- define this as a property to allow command-line override -->
-        <animal-sniffer.signature>java1${javaTarget.majorVersion}</animal-sniffer.signature>
+        <animal-sniffer.signature>${javaTarget.majorVersion}${javaTarget.minorVersion}</animal-sniffer.signature>
       </properties>
   
       <build>
