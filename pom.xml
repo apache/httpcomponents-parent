@@ -600,8 +600,8 @@ Fixed JIRA link
           <version>3.2.0</version>
         </plugin>
         <plugin>
-          <artifactId>maven-notice-plugin</artifactId>
           <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>maven-notice-plugin</artifactId>
           <version>0.0.2</version>
           <executions>
             <execution>
