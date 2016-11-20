@@ -49,6 +49,7 @@ Version 8 - changes since version 7
 Dropped definition of maven.compiler.(source|target).
 These must now be defined at component level.
 
+clirr-maven-plugin 2.7 -> 2.8
 docbkx-maven-plugin 2.16 -> 2.17
 maven-site-plugin 3.4 -> 3.6
 maven-resources-plugin 2.7 -> 3.0.1
@@ -913,7 +914,7 @@ Fixed JIRA link
     <hc.site.url>scp://people.apache.org/www/hc.apache.org/</hc.site.url>
 
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
-    <hc.clirr.version>2.7</hc.clirr.version>
+    <hc.clirr.version>2.8</hc.clirr.version>
     <hc.clover2.version>3.1.11</hc.clover2.version>
     <hc.javadoc.version>2.10.4</hc.javadoc.version>
     <hc.jxr.version>2.5</hc.jxr.version>
