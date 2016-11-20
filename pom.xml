@@ -270,7 +270,7 @@ Fixed JIRA link
       <name>Gary Gregory</name>
       <id>ggregory</id>
       <email>ggregory -at- apache.org</email>
-      <timezone>-5</timezone>
+      <timezone>-8</timezone>
       <roles>
         <role>Committer</role>
         <role>PMC</role>
