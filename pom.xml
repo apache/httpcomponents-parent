@@ -407,17 +407,6 @@ Fixed JIRA link
 
   <build>
     <plugins>
-    <!--
-        Override the Apache POM which defines the source/target directly rather than using properties.
-         See: https://issues.apache.org/jira/browse/MPOM-44
-     -->
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-        </configuration>
-      </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
