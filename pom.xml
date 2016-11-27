@@ -427,7 +427,6 @@ Fixed JIRA link
            -->
           <excludes combine.children="append">
             <exclude>.pmd</exclude>
-            <exclude>jakarta-httpcomponents-charter.txt</exclude>
           </excludes>
         </configuration>
       </plugin>
