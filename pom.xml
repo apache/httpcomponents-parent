@@ -49,6 +49,10 @@ Version 8 - changes since version 7
 Dropped definition of maven.compiler.(source|target).
 These must now be defined at component level.
 
+add profile nodoclint
+maven-checkstyle-plugin 2.9.1 -> 2.17
+maven-project-info-reports-plugin 2.8.1 -> 2.9
+maven-clover2-plugin 3.1.11 -> 4.0.6
 clirr-maven-plugin 2.7 -> 2.8
 docbkx-maven-plugin 2.16 -> 2.17
 maven-site-plugin 3.4 -> 3.6
@@ -896,13 +900,72 @@ Fixed JIRA link
 
     </profile>
 
+    <profile>
+      <id>nodoclint</id>
+      <build>
+        <plugins>
+         <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-javadoc-plugin</artifactId>
+             <configuration>
+               <additionalparam>-Xdoclint:none</additionalparam>
+             </configuration>
+           </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
+    <profile>
+      <id>travis-cobertura</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>cobertura-maven-plugin</artifactId>
+            <version>${hc.cobertura.version}</version>
+            <configuration>
+              <formats>
+                <format>xml</format>
+              </formats>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.eluder.coveralls</groupId>
+            <artifactId>coveralls-maven-plugin</artifactId>
+            <version>${hc.coveralls.version}</version>
+            <configuration>
+              <timestampFormat>${hc.coveralls.timestampFormat}</timestampFormat>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
 
-
-
+    <profile>
+      <id>travis-jacoco</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>${hc.jacoco.version}</version>
+          </plugin>
+          <plugin>
+            <groupId>org.eluder.coveralls</groupId>
+            <artifactId>coveralls-maven-plugin</artifactId>
+            <version>${hc.coveralls.version}</version>
+            <configuration>
+              <timestampFormat>${hc.coveralls.timestampFormat}</timestampFormat>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
   </profiles>
 
   <prerequisites>
-    <maven>3.0.3</maven>
+    <maven>3.0.5</maven>
   </prerequisites>
 
   <properties>
@@ -915,16 +978,21 @@ Fixed JIRA link
 
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
     <hc.clirr.version>2.8</hc.clirr.version>
-    <hc.clover2.version>3.1.11</hc.clover2.version>
+    <hc.clover2.version>4.0.6</hc.clover2.version>
     <hc.javadoc.version>2.10.4</hc.javadoc.version>
     <hc.jxr.version>2.5</hc.jxr.version>
     <hc.surefire-report.version>2.19.1</hc.surefire-report.version>
     <hc.surefire.version>2.19.1</hc.surefire.version>
-    <hc.project-info.version>2.8.1</hc.project-info.version>
-    <hc.checkstyle.version>2.9.1</hc.checkstyle.version>
+    <hc.project-info.version>2.9</hc.project-info.version>
+    <hc.checkstyle.version>2.17</hc.checkstyle.version>
     <hc.rat.version>0.12</hc.rat.version>
     <hc.animal-sniffer.version>1.15</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
+    <hc.jacoco.version>0.7.7.201606060606</hc.jacoco.version>
+    <hc.cobertura.version>2.7</hc.cobertura.version>
+    <hc.coveralls.version>4.3.0</hc.coveralls.version>
+    <hc.coveralls.timestampFormat>EpochMillis</hc.coveralls.timestampFormat>
+    
     <!-- build meta inf -->
     <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssZ</maven.build.timestamp.format>
     <implementation.build>${scmBranch}@r${buildNumber}; ${maven.build.timestamp}</implementation.build>
