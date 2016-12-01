@@ -34,7 +34,7 @@
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>project</artifactId>
-  <version>8-SNAPSHOT</version>
+  <version>9-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Apache HttpComponents</name>
   <url>http://hc.apache.org/</url>
@@ -43,6 +43,9 @@
 
 
 <!--
+Version 9 - changes since version 8
+===================================
+
 Version 8 - changes since version 7
 ===================================
 
