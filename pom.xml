@@ -50,6 +50,7 @@ maven-compiler-plugin 3.6.0 -> 3.6.1
 maven-surefire-plugin 2.19.1 -> 2.20
 maven-resources-plugin 3.0.1 -> 3.0.2
 maven-bundle-plugin 3.2.0 -> 3.3.0
+jacaoco-maven-plugin 0.7.7.201606060606 -> 0.7.9
 
 Version 8 - changes since version 7
 ===================================
@@ -1011,7 +1012,7 @@ Fixed JIRA link
     <hc.rat.version>0.12</hc.rat.version>
     <hc.animal-sniffer.version>1.15</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
-    <hc.jacoco.version>0.7.7.201606060606</hc.jacoco.version>
+    <hc.jacoco.version>0.7.9</hc.jacoco.version>
     <hc.cobertura.version>2.7</hc.cobertura.version>
     <hc.coveralls.version>4.3.0</hc.coveralls.version>
     <hc.coveralls.timestampFormat>EpochMillis</hc.coveralls.timestampFormat>
