@@ -46,6 +46,9 @@
 Version 9 - changes since version 8
 ===================================
 
+maven-compiler-plugin 3.6.0 -> 3.6.1
+maven-surefire-plugin 2.19.1 -> 2.20
+
 Version 8 - changes since version 7
 ===================================
 
@@ -476,7 +479,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.6.0</version>
+          <version>3.6.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -999,8 +1002,8 @@ Fixed JIRA link
     <hc.clover2.version>4.0.6</hc.clover2.version>
     <hc.javadoc.version>2.10.4</hc.javadoc.version>
     <hc.jxr.version>2.5</hc.jxr.version>
-    <hc.surefire-report.version>2.19.1</hc.surefire-report.version>
-    <hc.surefire.version>2.19.1</hc.surefire.version>
+    <hc.surefire-report.version>2.20</hc.surefire-report.version>
+    <hc.surefire.version>2.20</hc.surefire.version>
     <hc.project-info.version>2.9</hc.project-info.version>
     <hc.checkstyle.version>2.17</hc.checkstyle.version>
     <hc.rat.version>0.12</hc.rat.version>
