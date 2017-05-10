@@ -167,9 +167,9 @@ Fixed JIRA link
   </issueManagement>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/httpcomponents/project-trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/httpcomponents/project-trunk</developerConnection>
-    <url>http://svn.apache.org/repos/asf/httpcomponents/project-trunk</url>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/httpcomponents/project/trunk</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/httpcomponents/project/trunk</developerConnection>
+    <url>http://svn.apache.org/repos/asf/httpcomponents/project/trunk</url>
   </scm>
 
   <developers>
