@@ -46,6 +46,9 @@
 Version 9 - changes since version 8
 ===================================
 
+Removed obsolete notice plugin
+Removed obsolete svn-buildnumber plugin and profiles
+Removed obsolete clover plugin and profile
 maven-compiler-plugin 3.6.0 -> 3.6.1
 maven-surefire-plugin 2.19.1 -> 2.20
 maven-resources-plugin 3.0.1 -> 3.0.2
@@ -629,22 +632,6 @@ Fixed JIRA link
           <version>3.3.0</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.httpcomponents</groupId>
-          <artifactId>maven-notice-plugin</artifactId>
-          <version>0.0.2</version>
-          <executions>
-            <execution>
-              <id>attach-notice-license</id>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
-          <configuration>
-            <projectTitle>Apache HttpComponents</projectTitle>
-          </configuration>
-        </plugin>
-        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>buildnumber-maven-plugin</artifactId>
           <version>1.4</version>
@@ -830,100 +817,6 @@ Fixed JIRA link
       </properties>
     </profile>
 
-    <!-- 
-        Automatically run the buildnumber plugin unless the buildNumber.skip property is defined as true
-    -->
-    <profile>
-      <id>svn-buildnumber</id>
-      <activation>
-        <property><name>!buildNumber.skip</name><value>!true</value></property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>buildnumber-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <phase>generate-resources</phase>
-                <goals>
-                  <goal>create</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <!-- Use committed revision so it does not change every time svn update is run -->
-              <useLastCommittedRevision>true</useLastCommittedRevision>
-              <!-- default revision number if unavailable -->
-              <revisionOnScmFailure>??????</revisionOnScmFailure>
-              <doCheck>false</doCheck>
-              <doUpdate>false</doUpdate>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <!-- optional profile to use javasvn instead of the SVN CLI for the buildNumber plugin -->
-    <profile>
-      <id>javasvn</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>buildnumber-maven-plugin</artifactId>
-            <configuration>
-              <providerImplementations>
-                <svn>javasvn</svn>
-              </providerImplementations>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <!-- Optional Clover profile -->
-    <profile>
-      <id>clover</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>com.atlassian.maven.plugins</groupId>
-            <artifactId>maven-clover2-plugin</artifactId>
-            <version>${hc.clover2.version}</version>
-            <configuration>
-              <flushPolicy>threaded</flushPolicy>
-              <flushInterval>100</flushInterval>
-              <targetPercentage>50%</targetPercentage>
-            </configuration>
-            <executions>
-              <execution>
-                <id>site</id>
-                <phase>pre-site</phase>
-                <goals>
-                  <goal>instrument</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-
-      <reporting>
-        <plugins>
-          <plugin>
-            <groupId>com.atlassian.maven.plugins</groupId>
-            <artifactId>maven-clover2-plugin</artifactId>
-            <version>${hc.clover2.version}</version>
-            <configuration>
-              <jdk>1.5</jdk>
-            </configuration>
-          </plugin>
-        </plugins>
-      </reporting>
-
-    </profile>
-
     <profile>
       <id>nodoclint</id>
       <build>
@@ -1002,7 +895,6 @@ Fixed JIRA link
 
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
     <hc.clirr.version>2.8</hc.clirr.version>
-    <hc.clover2.version>4.0.6</hc.clover2.version>
     <hc.javadoc.version>2.10.4</hc.javadoc.version>
     <hc.jxr.version>2.5</hc.jxr.version>
     <hc.surefire-report.version>2.20</hc.surefire-report.version>
