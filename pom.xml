@@ -50,6 +50,7 @@ Removed obsolete notice plugin
 Removed obsolete svn-buildnumber plugin and profiles
 Removed obsolete clover plugin and profile
 maven-compiler-plugin 3.6.0 -> 3.6.1
+maven-compiler-plugin 3.6.1 -> 3.6.2
 maven-surefire-plugin 2.19.1 -> 2.20
 maven-resources-plugin 3.0.1 -> 3.0.2
 maven-bundle-plugin 3.2.0 -> 3.3.0
@@ -488,7 +489,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.6.1</version>
+          <version>3.6.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
