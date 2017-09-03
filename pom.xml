@@ -59,6 +59,7 @@ jacaoco-maven-plugin 0.7.7.201606060606 -> 0.7.9
 Renamed artifactId to httpcomponents-parent
 Added use-toolchains profile; activated if ~/.m2/toolchains.xml exists
 maven-javadoc-plugin 2.10.4 -> 3.0.0-M1 (allows building on Java 9.)
+animal-sniffer-maven-plugin 1.15 -> 1.16
 
 Version 8 - changes since version 7
 ===================================
@@ -491,6 +492,10 @@ Fixed JIRA link
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.6.2</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -679,6 +684,11 @@ Fixed JIRA link
               </goals>
             </execution>
           </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>${hc.project-info.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -943,7 +953,7 @@ Fixed JIRA link
     <hc.project-info.version>2.9</hc.project-info.version>
     <hc.checkstyle.version>2.17</hc.checkstyle.version>
     <hc.rat.version>0.12</hc.rat.version>
-    <hc.animal-sniffer.version>1.15</hc.animal-sniffer.version>
+    <hc.animal-sniffer.version>1.16</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
     <hc.jacoco.version>0.7.9</hc.jacoco.version>
     <hc.cobertura.version>2.7</hc.cobertura.version>
