@@ -52,6 +52,7 @@ Removed obsolete clover plugin and profile
 maven-assembly-plugin 3.0.0 -> 3.1.0
 maven-compiler-plugin 3.6.0 -> 3.6.1
 maven-compiler-plugin 3.6.1 -> 3.6.2
+maven-compiler-plugin 3.6.2 -> 3.7.0
 maven-surefire-plugin 2.19.1 -> 2.20
 maven-resources-plugin 3.0.1 -> 3.0.2
 maven-bundle-plugin 3.2.0 -> 3.3.0
@@ -491,7 +492,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.6.2</version>
+          <version>3.7.0</version>
           <configuration>
             <source>${maven.compiler.source}</source>
             <target>${maven.compiler.target}</target>
