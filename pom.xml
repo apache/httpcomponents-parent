@@ -177,9 +177,10 @@ Fixed JIRA link
   </issueManagement>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/httpcomponents/project/trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/httpcomponents/project/trunk</developerConnection>
-    <url>http://svn.apache.org/repos/asf/httpcomponents/project/trunk</url>
+    <connection>scm:git:https://git-wip-us.apache.org/repos/asf/httpcomponents-parent.git</connection>
+    <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/httpcomponents-parent.git</developerConnection>
+    <url>https://github.com/apache/httpcomponents-parent/tree/${project.scm.tag}</url>
+    <tag>master</tag>
   </scm>
 
   <developers>
