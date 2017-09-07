@@ -1,0 +1,174 @@
+Building HttpComponents Parent
+==============================
+
+(1) Requisites
+--------------
+
+JDK 1.7 or later is required in order to compile and run HttpComponents Parent.
+
+HttpComponents Parent utilizes Apache Maven as a distribution management and packaging tool.
+Version 3.0.5 or later is required.
+Version 3.5.0 is recommended (this is what I am running.)
+
+Maven installation and configuration instructions can be found here:
+
+http://maven.apache.org/run-maven/index.html
+
+You will also need Apache Subversion and Git:
+
+- Apache Subversion: https://subversion.apache.org/
+- Git: https://git-scm.com/
+
+(2) Check local build
+---------------------
+
+Run the following to make sure all is well:
+
+mvn clean package
+
+(3) Consider plugin updates
+---------------------------
+
+Run the following to see which plugins you could update:
+
+mvn versions:display-plugin-updates -U
+
+(4) Test deploying the SNAPSHOT
+-------------------------------
+
+Try deploying the current SNAPSHOT as a sanity check:
+
+mvn clean deploy
+
+(5) Creating a release candidate
+--------------------------------
+
+Check the license headers:
+
+mvn apache-rat:check
+
+Check that we have a LICENSE.txt file.
+
+Check that we have a NOTICE.txt file and that it has the proper copyright end year, which should be the current year.
+
+Make sure the POM shows the correct version and that it is not a SNAPSHOT.
+
+Tag the release candidate:
+
+git commit -am "Update version numbers for release 9"
+git tag -s 9-RC1 -m "Tag release 9-RC1"
+git push
+
+Dry-run the release:
+
+mvn release:prepare -DdryRun=true
+
+
+Run the release:
+
+mvn release:clean
+mvn release:prepare
+
+Deploy:
+
+mvn deploy
+
+Login to https://repository.apache.org and close the RC.
+
+Publish to https://dist.apache.org/repos/dist/dev/httpcomponents/httpcomponents-parent/
+
+Check out the dist folder for this component:
+
+set VERSION=9
+set RC_VERSION=9-RC1
+set REPO_PATH=%USERPROFILE%\.m2\repository\org\apache\httpcomponents\httpcomponents-parent\%VERSION%
+svn checkout https://dist.apache.org/repos/dist/dev/httpcomponents/
+cd httpcomponents\httpcomponents-parent
+mkdir %RC_VERSION%
+cd %RC_VERSION%
+set RC_DIR=%cd%
+copy %REPO_PATH%\httpcomponents-parent-%VERSION%.pom .
+copy %REPO_PATH%\httpcomponents-parent-%VERSION%.pom.sha1 .
+svn commit -m "Apache HttpComponents Parent %RC_VERSION%" 
+
+(6) Call for a VOTE
+-------------------
+
+Email dev@hc.apache.org, for example:
+
+Subject: [VOTE] Release HttpComponents Parent version 9 based on RC1
+
+Please vote on Release HttpComponents Parent version 9 based on RC1.
+
+The changes since version 8 are:
+
+- Removed obsolete notice plugin
+- Removed obsolete svn-buildnumber plugin and profiles
+- Removed obsolete clover plugin and profile
+- build-helper-maven-plugin 1.12 -> 3.0.0
+- maven-gpg-plugin 1.4 -> 1.6
+- maven-assembly-plugin 3.0.0 -> 3.1.0
+- maven-compiler-plugin 3.6.0 -> 3.6.1
+- maven-compiler-plugin 3.6.1 -> 3.6.2
+- maven-compiler-plugin 3.6.2 -> 3.7.0
+- maven-surefire-plugin 2.19.1 -> 2.20
+- maven-resources-plugin 3.0.1 -> 3.0.2
+- maven-bundle-plugin 3.2.0 -> 3.3.0
+- jacaoco-maven-plugin 0.7.7.201606060606 -> 0.7.9
+- Renamed artifactId to httpcomponents-parent
+- Added use-toolchains profile; activated if ~/.m2/toolchains.xml exists
+- maven-javadoc-plugin 2.10.4 -> 3.0.0-M1 (allows building on Java 9.)
+- animal-sniffer-maven-plugin 1.15 -> 1.16
+
+The vote is open for at least 72 hours.
+Anyone may vote, but only votes from HttpComponents PMC members are binding.
+The vote passes if at least three binding +1 votes are cast and there
+are more +1 than -1 votes.
+
+Maven artefacts:
+https://repository.apache.org/content/repositories/orgapachehttpcomponents-NNN/
+
+SVN tag:
+http://svn.apache.org/repos/asf/httpcomponents/project/tags/9-RC1/
+
+--------------------------------------------------------------------------
+ Vote:  HttpComponents parent pom 5 release based on RC1
+ [X] +1 Release the packages as HttpComponents parent pom 5
+ [ ] -1 I am against releasing the packages (must include a reason).
+
+(7) Gather the VOTE result
+--------------------------
+
+Count and send to dev@hc.apache.org:
+
+Subject: [VOTE][RESULT] Release HttpComponents Parent version 9 based on RC1
+
+(8) Publish
+-----------
+
+Publish to https://dist.apache.org/repos/dist/release/httpcomponents/httpcomponents-parent/
+
+set VERSION=9
+set RC_VERSION=9-RC1
+set REPO_PATH=%USERPROFILE%\.m2\repository\org\apache\httpcomponents\httpcomponents-parent\%VERSION%
+svn checkout https://dist.apache.org/repos/dist/release/httpcomponents/
+cd httpcomponents\httpcomponents-parent
+mkdir %VERSION%
+cd %VERSION%
+copy %REPO_PATH%\httpcomponents-parent-%VERSION%.pom .
+copy %REPO_PATH%\httpcomponents-parent-%VERSION%.pom.sha1 .
+svn commit -m "Apache HttpComponents Parent %VERSION%" 
+
+Login to https://repository.apache.org and delete any extraneous checksum files: BE CAREFUL WHICH FILES YOU DELETE. 
+Then release the RC.
+
+(9) Clean up
+------------
+
+Remove the RC form https://dist.apache.org/repos/dist/dev/httpcomponents/
+
+(10) Send Announcement Email
+----------------------------
+
+Since this is an internal component, announcing the release to dev@hc.apache.org should be enough.
+
