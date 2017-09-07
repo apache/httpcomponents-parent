@@ -19,6 +19,20 @@ You will also need Apache Subversion and Git:
 - Apache Subversion: https://subversion.apache.org/
 - Git: https://git-scm.com/
 
+These instructions were last used with:
+
+Apache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-03T13:39:06-06:00)
+Maven home: C:\Java\apache-maven-3.5.0\bin\..
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: C:\Program Files\Java\jdk1.7.0_80\jre
+Default locale: en_US, platform encoding: Cp1252
+OS name: "windows 8.1", version: "6.3", arch: "amd64", family: "windows"
+
+svn, version 1.9.7-SlikSvn (SlikSvn/1.9.7)
+   compiled Aug 13 2017, 14:10:40 on x86_64-microsoft-windows6.2.9200
+
+git version 2.14.1.windows.1
+
 (2) Check local build
 ---------------------
 
