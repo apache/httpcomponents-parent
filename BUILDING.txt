@@ -74,7 +74,7 @@ Tag the release candidate:
 
 git commit -am "Update version numbers for release 9"
 git tag -s 9-RC1 -m "Tag release 9-RC1"
-git push
+git push origin 9-RC1
 
 Dry-run the release:
 
@@ -82,16 +82,16 @@ mvn release:prepare -DdryRun=true
 
 Run the release:
 
-mvn release:clean
 mvn release:prepare
 
 Deploy:
 
-mvn deploy
+mvn deploy -Prelease
 
-Login to https://repository.apache.org and close the RC.
+Login to https://repository.apache.org and close the RC. 
+Keep note of the repository location, for example: https://repository.apache.org/content/repositories/orgapachehttpcomponents-1065
 
-Publish to https://dist.apache.org/repos/dist/dev/httpcomponents/httpcomponents-parent/
+Publish to dist folder:
 
 Check out the dist folder for this component:
 
@@ -104,7 +104,8 @@ mkdir %RC_VERSION%
 cd %RC_VERSION%
 set RC_DIR=%cd%
 copy %REPO_PATH%\httpcomponents-parent-%VERSION%.pom .
-copy %REPO_PATH%\httpcomponents-parent-%VERSION%.pom.sha1 .
+copy %REPO_PATH%\httpcomponents-parent-%VERSION%.pom.asc .
+ALSO: Copy SHA1 and MD5 files from https://repository.apache.org/content/repositories/orgapachehttpcomponents-????
 svn commit -m "Apache HttpComponents Parent %RC_VERSION%" 
 
 (6) Call for a VOTE
@@ -114,7 +115,7 @@ Email dev@hc.apache.org, for example:
 
 Subject: [VOTE] Release HttpComponents Parent version 9 based on RC1
 
-Please vote on Release HttpComponents Parent version 9 based on RC1.
+Please vote to release HttpComponents Parent version 9 based on RC1.
 
 The changes since version 8 are:
 
@@ -142,14 +143,17 @@ The vote passes if at least three binding +1 votes are cast and there
 are more +1 than -1 votes.
 
 Maven artefacts:
-https://repository.apache.org/content/repositories/orgapachehttpcomponents-NNN/
+https://repository.apache.org/content/repositories/orgapachehttpcomponents-????/
 
-SVN tag:
-http://svn.apache.org/repos/asf/httpcomponents/project/tags/9-RC1/
+Git tag:
+https://git-wip-us.apache.org/repos/asf?p=httpcomponents-parent.git;a=commit;h=215ae373d047e2fa886642de24de9a905dbbe7cb
+
+Dev dist:
+https://dist.apache.org/repos/dist/dev/httpcomponents/httpcomponents-parent/9-RC1/
 
 --------------------------------------------------------------------------
  Vote:  HttpComponents parent pom 5 release based on RC1
- [X] +1 Release the packages as HttpComponents parent pom 5
+ [ ] +1 Release the packages as HttpComponents parent pom 5
  [ ] -1 I am against releasing the packages (must include a reason).
 
 (7) Gather the VOTE result
