@@ -33,6 +33,9 @@ svn, version 1.9.7-SlikSvn (SlikSvn/1.9.7)
 
 git version 2.14.1.windows.1
 
+gpg (GnuPG) 2.0.30 (Gpg4win 2.3.4)
+libgcrypt 1.7.8
+
 (2) Check local build
 ---------------------
 
@@ -76,7 +79,6 @@ git push
 Dry-run the release:
 
 mvn release:prepare -DdryRun=true
-
 
 Run the release:
 
