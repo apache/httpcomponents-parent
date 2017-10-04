@@ -694,11 +694,6 @@ Fixed JIRA link
             </execution>
           </executions>
         </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>${hc.project-info.version}</version>
-        </plugin>
       </plugins>
     </pluginManagement>
   </build>
