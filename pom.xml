@@ -46,6 +46,7 @@
 Version 10 - changes since version 9
 ====================================
 
+HC style check definition 1 -> 2
 maven-surefire-plugin 2.20 -> 2.20.1 (required to build with Java 9 GA.)
 
 Version 9 - changes since version 8
@@ -671,7 +672,7 @@ Fixed JIRA link
             <dependency>
               <groupId>org.apache.httpcomponents</groupId>
               <artifactId>hc-stylecheck</artifactId>
-              <version>1</version>
+              <version>2</version>
             </dependency>
           </dependencies>
           <configuration>
