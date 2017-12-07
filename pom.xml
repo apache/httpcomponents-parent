@@ -969,7 +969,7 @@ Fixed JIRA link
 
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
     <hc.clirr.version>2.8</hc.clirr.version>
-    <hc.javadoc.version>3.0.0-M1</hc.javadoc.version>
+    <hc.javadoc.version>3.0.0</hc.javadoc.version>
     <hc.jxr.version>2.5</hc.jxr.version>
     <hc.surefire-report.version>2.20.1</hc.surefire-report.version>
     <hc.surefire.version>2.20.1</hc.surefire.version>
