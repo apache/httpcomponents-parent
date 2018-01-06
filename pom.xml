@@ -47,6 +47,7 @@ Version 11 - changes since version 10
 =====================================
 
 maven-javadoc-plugin 3.0.0-M1 -> 3.0.0
+maven-site-plugin 3.6 -> 3.7 (allows building with Java 9)
 
 Version 10 - changes since version 9
 ====================================
@@ -597,7 +598,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.6</version>
+          <version>3.7</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.wagon</groupId>
