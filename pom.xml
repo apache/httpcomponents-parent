@@ -49,6 +49,7 @@ Version 11 - changes since version 10
 maven-javadoc-plugin 3.0.0-M1 -> 3.0.0
 maven-site-plugin 3.6 -> 3.7 (allows building with Java 9)
 wagon-ssh 2.10 -> 3.0.0.
+maven-bundle-plugin 3.3.0 -> 3.4.0
 
 Version 10 - changes since version 9
 ====================================
@@ -656,7 +657,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.4.0</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
