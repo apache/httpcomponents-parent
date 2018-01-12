@@ -48,6 +48,7 @@ Version 11 - changes since version 10
 
 maven-javadoc-plugin 3.0.0-M1 -> 3.0.0
 maven-site-plugin 3.6 -> 3.7 (allows building with Java 9)
+wagon-ssh 2.10 -> 3.0.0.
 
 Version 10 - changes since version 9
 ====================================
