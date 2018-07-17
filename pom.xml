@@ -50,6 +50,7 @@ maven-javadoc-plugin 3.0.0-M1 -> 3.0.1
 maven-site-plugin 3.6 -> 3.7 (allows building with Java 9)
 wagon-ssh 2.10 -> 3.0.0.
 maven-bundle-plugin 3.3.0 -> 3.5.0
+jacoco-maven-plugin 0.7.9 -> 0.8.1
 
 Version 10 - changes since version 9
 ====================================
@@ -986,7 +987,7 @@ Fixed JIRA link
     <hc.rat.version>0.12</hc.rat.version>
     <hc.animal-sniffer.version>1.16</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
-    <hc.jacoco.version>0.7.9</hc.jacoco.version>
+    <hc.jacoco.version>0.8.1</hc.jacoco.version>
     <hc.cobertura.version>2.7</hc.cobertura.version>
     <hc.coveralls.version>4.3.0</hc.coveralls.version>
     <hc.coveralls.timestampFormat>EpochMillis</hc.coveralls.timestampFormat>
