@@ -46,6 +46,7 @@
 Version 11 - changes since version 10
 =====================================
 
+Added dependency-check-maven 3.3.1
 maven-javadoc-plugin 3.0.0-M1 -> 3.0.1
 maven-site-plugin 3.6 -> 3.7 (allows building with Java 9)
 wagon-ssh 2.10 -> 3.0.0.
@@ -963,7 +964,25 @@ Fixed JIRA link
         </plugins>
       </build>
     </profile>
-    
+    <profile>
+      <id>owasp</id>
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <version>3.3.1</version>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>aggregate</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+        </plugins>
+      </reporting>
+    </profile>
   </profiles>
 
   <prerequisites>
