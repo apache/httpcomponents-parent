@@ -867,9 +867,6 @@ Fixed JIRA link
 
     <profile>
       <id>lax-doclint</id>
-      <activation>
-        <jdk>1.8</jdk>
-      </activation>
       <build>
         <plugins>
           <plugin>
