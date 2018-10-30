@@ -30,7 +30,7 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>18</version>
+    <version>21</version>
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>httpcomponents-parent</artifactId>
@@ -46,10 +46,15 @@
 Version 11 - changes since version 10
 =====================================
 
+org.apache.apache 18 -> 21
+maven-jar-plugin 3.0.2 ->
+maven-resources-plugin 3.0.2 -> 3.1.0
+maven-resources-plugin 2.5 -> 3.0.0
+maven-project-info-reports-plugin 2.9 -> 3.0.0
+maven-site-plugin 3.6 -> 3.7.1 (allows building with Java 9)
+wagon-ssh 2.10 -> 3.2.0.
 Added dependency-check-maven 3.3.1
 maven-javadoc-plugin 3.0.0-M1 -> 3.0.1
-maven-site-plugin 3.6 -> 3.7 (allows building with Java 9)
-wagon-ssh 2.10 -> 3.0.0.
 maven-bundle-plugin 3.3.0 -> 3.5.1
 jacoco-maven-plugin 0.7.9 -> 0.8.1
 maven-clean-plugin 3.0.0 -> 3.1.0
@@ -547,7 +552,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -582,7 +587,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.1.0</version>
           <executions>
             <execution>
               <id>copy-resources</id>
@@ -605,12 +610,12 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.7</version>
+          <version>3.7.1</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.wagon</groupId>
               <artifactId>wagon-ssh</artifactId>
-              <version>3.0.0</version>
+              <version>3.2.0</version>
             </dependency>
           </dependencies>
           <executions>
@@ -998,10 +1003,10 @@ Fixed JIRA link
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
     <hc.clirr.version>2.8</hc.clirr.version>
     <hc.javadoc.version>3.0.1</hc.javadoc.version>
-    <hc.jxr.version>2.5</hc.jxr.version>
+    <hc.jxr.version>3.0.0</hc.jxr.version>
     <hc.surefire-report.version>2.22.0</hc.surefire-report.version>
     <hc.surefire.version>2.22.1</hc.surefire.version>
-    <hc.project-info.version>2.9</hc.project-info.version>
+    <hc.project-info.version>3.0.0</hc.project-info.version>
     <hc.checkstyle.version>2.17</hc.checkstyle.version>
     <hc.rat.version>0.12</hc.rat.version>
     <hc.animal-sniffer.version>1.16</hc.animal-sniffer.version>
