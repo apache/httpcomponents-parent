@@ -43,6 +43,13 @@
 
 
 <!--
+
+Version 12 - changes since version 11
+=====================================
+
+maven-surefire-report-plugin 2.22.0 -> 2.22.1.
+
+
 Version 11 - changes since version 10
 =====================================
 
@@ -1004,7 +1011,7 @@ Fixed JIRA link
     <hc.clirr.version>2.8</hc.clirr.version>
     <hc.javadoc.version>3.0.1</hc.javadoc.version>
     <hc.jxr.version>3.0.0</hc.jxr.version>
-    <hc.surefire-report.version>2.22.0</hc.surefire-report.version>
+    <hc.surefire-report.version>2.22.1</hc.surefire-report.version>
     <hc.surefire.version>2.22.1</hc.surefire.version>
     <hc.project-info.version>3.0.0</hc.project-info.version>
     <hc.checkstyle.version>2.17</hc.checkstyle.version>
