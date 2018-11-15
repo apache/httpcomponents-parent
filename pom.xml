@@ -66,7 +66,7 @@ maven-bundle-plugin 3.3.0 -> 3.5.1
 jacoco-maven-plugin 0.7.9 -> 0.8.1
 maven-clean-plugin 3.0.0 -> 3.1.0
 maven-compiler-plugin 3.7.0 -> 3.8.0
-maven-surefire-plugin 2.22.1 -> 2.22.1 
+maven-surefire-plugin 2.22.1 -> 2.22.1
 
 Version 10 - changes since version 9
 ====================================
@@ -193,7 +193,7 @@ Buildnumber plugin changes:
 
 Added default manifest entries to source jars
 
-Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue) 
+Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
 
 Fixed JIRA link
  -->
@@ -604,13 +604,13 @@ Fixed JIRA link
               </goals>
               <configuration>
                 <outputDirectory>${basedir}/target/site/examples</outputDirectory>
-                <resources>          
+                <resources>
                   <resource>
                     <directory>src/examples</directory>
                     <filtering>false</filtering>
                   </resource>
-                </resources>              
-              </configuration>            
+                </resources>
+              </configuration>
             </execution>
           </executions>
         </plugin>
@@ -760,7 +760,7 @@ Fixed JIRA link
           <!--
              This property should always be defined.
              The intention is to ensure that the profile is always enabled.
-             (activeByDefault only applies if other profiles are not enabled) 
+             (activeByDefault only applies if other profiles are not enabled)
           -->
           <name>user.home</name>
         </property>
@@ -789,12 +789,12 @@ Fixed JIRA link
       </build>
     </profile>
 
-    <!-- 
+    <!--
          Runs the Animal Sniffer plugin to check that generated code does not included references
          to methods/classes etc that are not present in the standard Java runtime for the defined target version.
-         To bypass the checks, define "animal.sniffer.skip" as true, or create the file "src/site/resources/profile.noanimal" 
+         To bypass the checks, define "animal.sniffer.skip" as true, or create the file "src/site/resources/profile.noanimal"
     -->
-  
+
     <profile>
       <id>animal-sniffer</id>
       <activation>
@@ -803,15 +803,15 @@ Fixed JIRA link
           <missing>src/site/resources/profile.noanimal</missing>
         </file>
       </activation>
-      
+
       <properties>
         <!-- define this as a property to allow command-line override -->
         <animal-sniffer.signature>java${javaTarget.majorVersion}${javaTarget.minorVersion}</animal-sniffer.signature>
       </properties>
-  
+
       <build>
         <plugins>
-  
+
           <!-- Run the Animal Sniffer checks -->
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
@@ -834,7 +834,7 @@ Fixed JIRA link
               </signature>
             </configuration>
           </plugin>
-  
+
         </plugins>
       </build>
     </profile>
@@ -850,7 +850,7 @@ Fixed JIRA link
         </plugins>
       </build>
     </profile>
-    <!-- 
+    <!--
      | Profile to allow testing of deploy phase
      | e.g.
      | mvn deploy -Ptest-deploy -Prelease -Dgpg.skip
@@ -1022,7 +1022,7 @@ Fixed JIRA link
     <hc.cobertura.version>2.7</hc.cobertura.version>
     <hc.coveralls.version>4.3.0</hc.coveralls.version>
     <hc.coveralls.timestampFormat>EpochMillis</hc.coveralls.timestampFormat>
-    
+
     <!-- build meta inf -->
     <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssZ</maven.build.timestamp.format>
     <implementation.build>${scmBranch}@r${buildNumber}; ${maven.build.timestamp}</implementation.build>
