@@ -364,6 +364,15 @@ Fixed JIRA link
       </roles>
       <timezone>+1</timezone>
     </developer>
+    <developer>
+      <name>Ryan Schmitt</name>
+      <id>rschmitt</id>
+      <email>rschmitt@apache.org</email>
+      <roles>
+        <role>Committer</role>
+      </roles>
+      <timezone>America/Los_Angeles</timezone>
+    </developer>
   </developers>
 
   <contributors>
