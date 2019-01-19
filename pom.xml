@@ -48,7 +48,7 @@ Version 12 - changes since version 11
 =====================================
 
 maven-surefire-report-plugin 2.22.0 -> 2.22.1.
-
+Added property for animal sniffer exclusions
 
 Version 11 - changes since version 10
 =====================================
@@ -841,6 +841,7 @@ Fixed JIRA link
                 <artifactId>${animal-sniffer.signature}</artifactId>
                 <version>${hc.animal-sniffer.signature.version}</version>
               </signature>
+              <ignores>${hc.animal-sniffer.signature.ignores}</ignores>
             </configuration>
           </plugin>
 
@@ -1027,6 +1028,7 @@ Fixed JIRA link
     <hc.rat.version>0.12</hc.rat.version>
     <hc.animal-sniffer.version>1.16</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
+    <hc.animal-sniffer.signature.ignores></hc.animal-sniffer.signature.ignores>
     <hc.jacoco.version>0.8.1</hc.jacoco.version>
     <hc.cobertura.version>2.7</hc.cobertura.version>
     <hc.coveralls.version>4.3.0</hc.coveralls.version>
