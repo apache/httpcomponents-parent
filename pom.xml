@@ -483,6 +483,7 @@ Fixed JIRA link
                so that the child pom entries replace the parent entries
            -->
           <excludes combine.children="append">
+            <exclude>.mvn/wrapper/maven-wrapper.properties</exclude>
             <exclude>.pmd</exclude>
           </excludes>
         </configuration>
