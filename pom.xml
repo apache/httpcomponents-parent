@@ -733,7 +733,7 @@ Fixed JIRA link
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>${hc.project-info.version}</version><!-- needed for mvn site -->
+        <version>${hc.project-info.version}</version><!-- needed for ./mvnw site -->
         <!-- in particular, we don't want mailing-list to be inherited -->
         <inherited>false</inherited>
         <reportSets>
@@ -858,7 +858,7 @@ Fixed JIRA link
     <!--
      | Profile to allow testing of deploy phase
      | e.g.
-     | mvn deploy -Ptest-deploy -Prelease -Dgpg.skip
+     | ./mvnw deploy -Ptest-deploy -Prelease -Dgpg.skip
      -->
     <profile>
       <id>test-deploy</id>

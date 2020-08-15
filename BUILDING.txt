@@ -41,28 +41,28 @@ libgcrypt 1.7.8
 
 Run the following to make sure all is well:
 
-mvn clean package
+./mvnw clean package
 
 (3) Consider plugin updates
 ---------------------------
 
 Run the following to see which plugins you could update:
 
-mvn versions:display-plugin-updates -U
+./mvnw versions:display-plugin-updates -U
 
 (4) Test deploying the SNAPSHOT
 -------------------------------
 
 Try deploying the current SNAPSHOT as a sanity check:
 
-mvn clean deploy
+./mvnw clean deploy
 
 (5) Creating a release candidate
 --------------------------------
 
 Check the license headers:
 
-mvn apache-rat:check
+./mvnw apache-rat:check
 
 Check that we have a LICENSE.txt file.
 
@@ -78,15 +78,15 @@ git push origin 9-RC1
 
 Dry-run the release:
 
-mvn release:prepare -DdryRun=true
+./mvnw release:prepare -DdryRun=true
 
 Run the release:
 
-mvn release:prepare
+./mvnw release:prepare
 
 Deploy:
 
-mvn deploy -Prelease
+./mvnw deploy -Prelease
 
 Login to https://repository.apache.org and close the RC. 
 Keep note of the repository location, for example: https://repository.apache.org/content/repositories/orgapachehttpcomponents-1065
