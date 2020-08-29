@@ -218,6 +218,17 @@ Fixed JIRA link
 
   <developers>
     <developer>
+      <name>Michael Osipov</name>
+      <id>michaelo</id>
+      <email>michaelo -at- apache.org</email>
+      <roles>
+        <role>Committer</role>
+        <role>PMC Chair</role>
+        <role>PMC</role>
+      </roles>
+      <timezone>Europe/Berlin</timezone>
+    </developer>
+    <developer>
       <name>Ortwin Glueck</name>
       <id>oglueck</id>
       <email>oglueck -at- apache.org</email>
@@ -244,7 +255,7 @@ Fixed JIRA link
       <email>asankha -at- apache.org</email>
       <roles>
         <role>Committer</role>
-        <role>PMC Chair</role>
+        <role>PMC</role>
       </roles>
       <url>https://www.adroitlogic.com/</url>
       <timezone>+5.5</timezone>
