@@ -661,10 +661,10 @@ Fixed JIRA link
         <reportSets>
           <reportSet>
             <reports>
-              <report>project-team</report>
-              <report>issue-tracking</report>
+              <report>team</report>
+              <report>issue-management</report>
               <report>scm</report>
-              <report>mailing-list</report>
+              <report>mailing-lists</report>
             </reports>
           </reportSet>
         </reportSets>
