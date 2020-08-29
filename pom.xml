@@ -586,7 +586,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>${hc.surefire-report.version}</version>
+          <version>${hc.surefire.version}</version>
         </plugin>
         <!-- Other plugins, alpha order by groupId and artifactId -->
         <plugin>
@@ -941,7 +941,6 @@ Fixed JIRA link
     <hc.clirr.version>2.8</hc.clirr.version>
     <hc.javadoc.version>3.0.1</hc.javadoc.version>
     <hc.jxr.version>3.0.0</hc.jxr.version>
-    <hc.surefire-report.version>2.22.1</hc.surefire-report.version>
     <hc.surefire.version>2.22.1</hc.surefire.version>
     <hc.project-info.version>3.0.0</hc.project-info.version>
     <hc.checkstyle.version>2.17</hc.checkstyle.version>
