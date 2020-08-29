@@ -515,6 +515,9 @@ Fixed JIRA link
                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
               </manifest>
+              <manifestEntries>
+                <Implementation-Vendor-Id>org.apache</Implementation-Vendor-Id>
+              </manifestEntries>
             </archive>
           </configuration>
         </plugin>
@@ -571,6 +574,9 @@ Fixed JIRA link
                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
               </manifest>
+              <manifestEntries>
+                <Implementation-Vendor-Id>org.apache</Implementation-Vendor-Id>
+              </manifestEntries>
             </archive>
           </configuration>
         </plugin>
