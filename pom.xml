@@ -557,12 +557,12 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.7.1</version>
+          <version>3.9.1</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.wagon</groupId>
               <artifactId>wagon-ssh</artifactId>
-              <version>3.2.0</version>
+              <version>3.4.1</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -601,11 +601,6 @@ Fixed JIRA link
               <scope>runtime</scope>
             </dependency>
           </dependencies>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>maven-bundle-plugin</artifactId>
-          <version>3.5.1</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -701,7 +696,7 @@ Fixed JIRA link
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
-            <version>3.0.0</version>
+            <version>3.2.0</version>
             <executions>
               <execution>
                 <id>parse-version</id>
@@ -885,7 +880,7 @@ Fixed JIRA link
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-toolchains-plugin</artifactId>
-            <version>1.1</version>
+            <version>3.0.0</version>
             <configuration>
               <toolchains>
                 <jdk>
@@ -911,7 +906,7 @@ Fixed JIRA link
           <plugin>
             <groupId>org.owasp</groupId>
             <artifactId>dependency-check-maven</artifactId>
-            <version>3.3.1</version>
+            <version>3.3.4</version>
             <reportSets>
               <reportSet>
                 <reports>
@@ -938,15 +933,15 @@ Fixed JIRA link
 
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
     <hc.clirr.version>2.8</hc.clirr.version>
-    <hc.javadoc.version>3.0.1</hc.javadoc.version>
+    <hc.javadoc.version>3.2.0</hc.javadoc.version>
     <hc.jxr.version>3.0.0</hc.jxr.version>
-    <hc.surefire.version>2.22.1</hc.surefire.version>
-    <hc.project-info.version>3.0.0</hc.project-info.version>
-    <hc.checkstyle.version>2.17</hc.checkstyle.version>
-    <hc.animal-sniffer.version>1.16</hc.animal-sniffer.version>
+    <hc.surefire.version>3.0.0-M5</hc.surefire.version>
+    <hc.project-info.version>3.1.0</hc.project-info.version>
+    <hc.checkstyle.version>3.0.0</hc.checkstyle.version>
+    <hc.animal-sniffer.version>1.17</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
     <hc.animal-sniffer.signature.ignores></hc.animal-sniffer.signature.ignores>
-    <hc.jacoco.version>0.8.1</hc.jacoco.version>
+    <hc.jacoco.version>0.8.5</hc.jacoco.version>
     <hc.cobertura.version>2.7</hc.cobertura.version>
     <hc.coveralls.version>4.3.0</hc.coveralls.version>
     <hc.coveralls.timestampFormat>EpochMillis</hc.coveralls.timestampFormat>
