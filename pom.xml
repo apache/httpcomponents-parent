@@ -931,7 +931,6 @@ Fixed JIRA link
 
   <properties>
     <!-- compiler source and target must now be defined at component level -->
-    <maven.compiler.optimize>true</maven.compiler.optimize>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
