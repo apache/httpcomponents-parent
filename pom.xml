@@ -22,7 +22,7 @@
    This software consists of voluntary contributions made by many
    individuals on behalf of the Apache Software Foundation.  For more
    information on the Apache Software Foundation, please see
-   <http://www.apache.org/>.
+   <https://www.apache.org/>.
  -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -37,7 +37,7 @@
   <version>12-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Apache HttpComponents Parent</name>
-  <url>http://hc.apache.org/</url>
+  <url>https://hc.apache.org/</url>
   <description>Apache components to build HTTP enabled services</description>
   <inceptionYear>2005</inceptionYear>
 
@@ -200,7 +200,7 @@ Fixed JIRA link
 
   <organization>
     <name>Apache Software Foundation</name>
-    <url>http://www.apache.org/</url>
+    <url>https://www.apache.org/</url>
   </organization>
 
   <issueManagement>
@@ -424,8 +424,8 @@ Fixed JIRA link
       <post>mailto:httpclient-users@hc.apache.org</post>
       <archive>https://lists.apache.org/list.html?httpclient-users@hc.apache.org</archive>
       <otherArchives>
-        <otherArchive>http://marc.info/?l=httpclient-users</otherArchive>
-        <otherArchive>http://httpclient-users.markmail.org/search/</otherArchive>
+        <otherArchive>https://marc.info/?l=httpclient-users</otherArchive>
+        <otherArchive>https://httpclient-users.markmail.org/search/</otherArchive>
       </otherArchives>
     </mailingList>
     <mailingList>
@@ -435,28 +435,27 @@ Fixed JIRA link
       <post>mailto:dev@hc.apache.org</post>
       <archive>https://lists.apache.org/list.html?dev@hc.apache.org</archive>
       <otherArchives>
-        <otherArchive>http://marc.info/?l=httpclient-commons-dev</otherArchive>
-        <otherArchive>http://apache-hc-dev.markmail.org/search/</otherArchive>
+        <otherArchive>https://marc.info/?l=httpclient-commons-dev</otherArchive>
+        <otherArchive>https://apache-hc-dev.markmail.org/search/</otherArchive>
       </otherArchives>
     </mailingList>
     <mailingList>
       <name>HttpComponents Commits List</name>
       <subscribe>mailto:commits-subscribe@hc.apache.org</subscribe>
       <unsubscribe>mailto:commits-unsubscribe@hc.apache.org</unsubscribe>
-      <post>(Read Only)</post>
       <archive>https://lists.apache.org/list.html?commits@hc.apache.org</archive>
       <otherArchives>
-        <otherArchive>http://marc.info/?l=httpcomponents-commits</otherArchive>
-        <otherArchive>http://hc-commits.markmail.org/search/</otherArchive>
+        <otherArchive>https://marc.info/?l=httpcomponents-commits</otherArchive>
+        <otherArchive>https://hc-commits.markmail.org/search/</otherArchive>
       </otherArchives>
     </mailingList>
     <mailingList>
       <name>Apache Announce List</name>
       <subscribe>announce-subscribe@apache.org</subscribe>
       <unsubscribe>announce-unsubscribe@apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/www-announce/</archive>
+      <archive>https://mail-archives.apache.org/mod_mbox/www-announce/</archive>
       <otherArchives>
-        <otherArchive>http://org-apache-announce.markmail.org/search/</otherArchive>
+        <otherArchive>https://org-apache-announce.markmail.org/search/</otherArchive>
       </otherArchives>
     </mailingList>
   </mailingLists>
@@ -474,7 +473,7 @@ Fixed JIRA link
     <repository>
       <id>apache.snapshots</id>
       <name>Apache Snapshot Repository</name>
-      <url>http://repository.apache.org/snapshots</url>
+      <url>https://repository.apache.org/snapshots</url>
       <releases>
         <enabled>false</enabled>
       </releases>
