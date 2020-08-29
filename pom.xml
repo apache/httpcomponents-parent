@@ -30,7 +30,7 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>21</version>
+    <version>23</version>
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>httpcomponents-parent</artifactId>
@@ -197,11 +197,6 @@ Felix bundle plugin updated: 2.3.5 -> 2.3.7 (fixes Java 1.5 issue)
 
 Fixed JIRA link
  -->
-
-  <organization>
-    <name>Apache Software Foundation</name>
-    <url>https://www.apache.org/</url>
-  </organization>
 
   <issueManagement>
     <system>Jira</system>
@@ -468,18 +463,6 @@ Fixed JIRA link
     </site>
   </distributionManagement>
 
-  <repositories>
-    <!-- allow snapshot dependencies to be resolved -->
-    <repository>
-      <id>apache.snapshots</id>
-      <name>Apache Snapshot Repository</name>
-      <url>https://repository.apache.org/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </repository>
-  </repositories>
-
   <build>
     <plugins>
       <plugin>
@@ -502,12 +485,6 @@ Fixed JIRA link
         <configuration>
           <archive>
             <manifestEntries>
-              <Specification-Title>Apache ${project.name}</Specification-Title>
-              <Specification-Version>${project.version}</Specification-Version>
-              <Specification-Vendor>Apache Software Foundation</Specification-Vendor>
-              <Implementation-Title>Apache HttpComponents ${project.name}</Implementation-Title>
-              <Implementation-Version>${project.version}</Implementation-Version>
-              <Implementation-Vendor>Apache Software Foundation</Implementation-Vendor>
               <Implementation-Vendor-Id>org.apache</Implementation-Vendor-Id>
               <!-- from buildnumber plugin and properties -->
               <Implementation-Build>${implementation.build}</Implementation-Build>
@@ -524,56 +501,11 @@ Fixed JIRA link
         <!-- org.apache.maven.plugins, alpha order by artifact id -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-antrun-plugin</artifactId>
-          <version>1.8</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
           <configuration>
             <source>${maven.compiler.source}</source>
             <target>${maven.compiler.target}</target>
           </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.6</version>
-          <executions>
-            <execution>
-              <id>sign-artifacts</id>
-              <phase>verify</phase>
-              <goals>
-                <goal>sign</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -602,13 +534,7 @@ Fixed JIRA link
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>2.5.3</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.1.0</version>
           <executions>
             <execution>
               <id>copy-resources</id>
@@ -639,19 +565,10 @@ Fixed JIRA link
               <version>3.2.0</version>
             </dependency>
           </dependencies>
-          <executions>
-            <execution>
-              <id>attach-descriptor</id>
-              <goals>
-                <goal>attach-descriptor</goal>
-              </goals>
-            </execution>
-          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.0.1</version>
           <configuration>
             <archive>
               <manifest>
@@ -825,7 +742,6 @@ Fixed JIRA link
 
       <build>
         <plugins>
-
           <!-- Run the Animal Sniffer checks -->
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
@@ -849,7 +765,6 @@ Fixed JIRA link
               <ignores>${hc.animal-sniffer.signature.ignores}</ignores>
             </configuration>
           </plugin>
-
         </plugins>
       </build>
     </profile>
@@ -1030,7 +945,6 @@ Fixed JIRA link
     <hc.surefire.version>2.22.1</hc.surefire.version>
     <hc.project-info.version>3.0.0</hc.project-info.version>
     <hc.checkstyle.version>2.17</hc.checkstyle.version>
-    <hc.rat.version>0.12</hc.rat.version>
     <hc.animal-sniffer.version>1.16</hc.animal-sniffer.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
     <hc.animal-sniffer.signature.ignores></hc.animal-sniffer.signature.ignores>
