@@ -623,9 +623,6 @@ Fixed JIRA link
               <version>2</version>
             </dependency>
           </dependencies>
-          <configuration>
-            <encoding>${project.build.sourceEncoding}</encoding>
-          </configuration>
           <executions>
             <execution>
               <id>validate</id>
