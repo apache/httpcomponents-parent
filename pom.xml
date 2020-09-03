@@ -33,7 +33,7 @@
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>httpcomponents-parent</artifactId>
-  <version>12</version>
+  <version>13-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Apache HttpComponents Parent</name>
   <url>https://hc.apache.org/</url>
@@ -207,7 +207,7 @@ Fixed JIRA link
     <connection>scm:git:https://gitbox.apache.org/repos/asf/httpcomponents-parent.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/httpcomponents-parent.git</developerConnection>
     <url>https://github.com/apache/httpcomponents-parent/tree/${project.scm.tag}</url>
-    <tag>httpcomponents-parent-12</tag>
+    <tag>master</tag>
   </scm>
 
   <developers>
