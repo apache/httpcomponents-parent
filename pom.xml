@@ -24,8 +24,7 @@
    information on the Apache Software Foundation, please see
    <http://www.apache.org/>.
  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.apache</groupId>
@@ -34,7 +33,7 @@
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>httpcomponents-parent</artifactId>
-  <version>12-SNAPSHOT</version>
+  <version>12</version>
   <packaging>pom</packaging>
   <name>Apache HttpComponents Parent</name>
   <url>https://hc.apache.org/</url>
@@ -208,7 +207,7 @@ Fixed JIRA link
     <connection>scm:git:https://gitbox.apache.org/repos/asf/httpcomponents-parent.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/httpcomponents-parent.git</developerConnection>
     <url>https://github.com/apache/httpcomponents-parent/tree/${project.scm.tag}</url>
-    <tag>master</tag>
+    <tag>httpcomponents-parent-12</tag>
   </scm>
 
   <developers>
@@ -227,7 +226,7 @@ Fixed JIRA link
       <name>Ortwin Glueck</name>
       <id>oglueck</id>
       <email>oglueck -at- apache.org</email>
-      <organization></organization>
+      <organization />
       <roles>
         <role>Emeritus PMC</role>
       </roles>
@@ -263,7 +262,7 @@ Fixed JIRA link
         <role>Committer</role>
         <role>PMC</role>
       </roles>
-      <timezone></timezone>
+      <timezone />
     </developer>
     <developer>
       <name>Erik Abele</name>
@@ -284,7 +283,7 @@ Fixed JIRA link
         <role>Committer</role>
         <role>PMC</role>
       </roles>
-      <timezone></timezone>
+      <timezone />
     </developer>
     <developer>
       <name>Paul Fremantle</name>
@@ -294,7 +293,7 @@ Fixed JIRA link
         <role>Committer</role>
         <role>PMC</role>
       </roles>
-      <timezone></timezone>
+      <timezone />
     </developer>
     <developer>
       <name>Roland Weber</name>
@@ -933,7 +932,7 @@ Fixed JIRA link
     <hc.project-info.version>3.1.0</hc.project-info.version>
     <hc.checkstyle.version>3.0.0</hc.checkstyle.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
-    <hc.animal-sniffer.signature.ignores></hc.animal-sniffer.signature.ignores>
+    <hc.animal-sniffer.signature.ignores />
     <hc.coveralls.version>4.3.0</hc.coveralls.version>
     <hc.coveralls.timestampFormat>EpochMillis</hc.coveralls.timestampFormat>
 
