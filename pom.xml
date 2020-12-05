@@ -43,6 +43,11 @@
 
 <!--
 
+Version 13 - changes since 12
+
+removed clirr-maven-plugin
+added japicmp-maven-plugin 0.14.4
+
 Version 12 - changes since version 11
 =====================================
 
@@ -604,11 +609,23 @@ Fixed JIRA link
           </dependencies>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>clirr-maven-plugin</artifactId>
-          <version>${hc.clirr.version}</version>
+          <groupId>com.github.siom79.japicmp</groupId>
+          <artifactId>japicmp-maven-plugin</artifactId>
+          <version>${hc.japicmp.version}</version>
           <configuration>
-            <minSeverity>${minSeverity}</minSeverity>
+            <oldVersion>
+              <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>${project.artifactId}</artifactId>
+                <version>${api.comparison.version}</version>
+                <type>jar</type>
+              </dependency>
+            </oldVersion>
+            <newVersion>
+              <file>
+                <path>${project.build.directory}/${project.build.finalName}.${project.packaging}</path>
+              </file>
+            </newVersion>
           </configuration>
         </plugin>
         <plugin>
@@ -925,7 +942,7 @@ Fixed JIRA link
     <hc.site.url>scp://people.apache.org/www/hc.apache.org/</hc.site.url>
 
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
-    <hc.clirr.version>2.8</hc.clirr.version>
+    <hc.japicmp.version>0.14.4</hc.japicmp.version>
     <hc.javadoc.version>3.2.0</hc.javadoc.version>
     <hc.jxr.version>3.0.0</hc.jxr.version>
     <hc.surefire.version>3.0.0-M5</hc.surefire.version>
@@ -936,7 +953,5 @@ Fixed JIRA link
     <hc.coveralls.version>4.3.0</hc.coveralls.version>
     <hc.coveralls.timestampFormat>EpochMillis</hc.coveralls.timestampFormat>
 
-    <!-- Allow Clirr severity to be overriden by the command-line option -DminSeverity=level -->
-    <minSeverity>info</minSeverity>
   </properties>
 </project>
