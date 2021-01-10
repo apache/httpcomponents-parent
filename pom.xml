@@ -51,6 +51,7 @@ added japicmp-maven-plugin 0.14.4
 Version 12 - changes since version 11
 =====================================
 
+org.apache.apache 21 -> 23
 maven-surefire-report-plugin 2.22.0 -> 2.22.1.
 Added property for animal sniffer exclusions
 
@@ -939,6 +940,7 @@ Fixed JIRA link
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <project.build.outputTimestamp>2021-01-10T15:31:00Z</project.build.outputTimestamp>
     <hc.site.url>scp://people.apache.org/www/hc.apache.org/</hc.site.url>
 
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
