@@ -45,6 +45,7 @@
 
 Version 13 - changes since 12
 
+japicmp-maven-plugin 0.14.4 -> 0.15.3
 removed clirr-maven-plugin
 added japicmp-maven-plugin 0.14.4
 
@@ -944,7 +945,7 @@ Fixed JIRA link
     <hc.site.url>scp://people.apache.org/www/hc.apache.org/</hc.site.url>
 
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
-    <hc.japicmp.version>0.14.4</hc.japicmp.version>
+    <hc.japicmp.version>0.15.3</hc.japicmp.version>
     <hc.javadoc.version>3.2.0</hc.javadoc.version>
     <hc.jxr.version>3.0.0</hc.jxr.version>
     <hc.surefire.version>3.0.0-M5</hc.surefire.version>
