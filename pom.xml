@@ -45,6 +45,7 @@
 
 Version 13 - changes since 12
 
+animal-sniffer-maven-plugin 1.17 -> 1.20
 japicmp-maven-plugin 0.14.4 -> 0.15.3
 removed clirr-maven-plugin
 added japicmp-maven-plugin 0.14.4
@@ -753,7 +754,7 @@ Fixed JIRA link
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>animal-sniffer-maven-plugin</artifactId>
-            <version>1.17</version>
+            <version>1.20</version>
             <executions>
               <execution>
                 <id>checkAPIcompatibility</id>
