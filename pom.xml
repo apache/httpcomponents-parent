@@ -33,7 +33,7 @@
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>httpcomponents-parent</artifactId>
-  <version>13-SNAPSHOT</version>
+  <version>13</version>
   <packaging>pom</packaging>
   <name>Apache HttpComponents Parent</name>
   <url>https://hc.apache.org/</url>
