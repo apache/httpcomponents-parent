@@ -29,7 +29,7 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>23</version>
+    <version>27</version>
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>httpcomponents-parent</artifactId>
@@ -46,11 +46,19 @@
 Version 14 - changes since 13
 =====================================
 
-japicmp-maven-plugin 0.15.3 -> 0.15.4
-maven-javadoc-plugin 3.2.0 -> 3.3.1
-maven-checkstyle-plugin 3.0.0 -> 3.1.2
-jacoco-maven-plugin 0.8.5 -> 0.8.7
-maven-jxr-plugin 3.0.0 -> 3.1.1
+org.apache.apache 23 -> 27
+maven-site-plugin 3.9.1 -> 3.12.1
+docbkx-maven-plugin removed
+animal-sniffer-maven-plugin 1.20 -> 1.22
+cobertura-maven-plugin removed
+jacoco-maven-plugin removed
+maven-toolchains-plugin 3.0.0 -> 3.1.0
+japicmp-maven-plugin 0.15.3 -> 0.16.0
+maven-javadoc-plugin 3.2.0 -> 3.4.1
+maven-jxr-plugin 3.0.0 -> 3.3.0
+maven-surefire-plugin 3.0.0-M5 -> 3.0.0-M7
+maven-project-info-reports-plugin 3.1.0 -> 3.4.1
+maven-checkstyle-plugin 3.0.0 -> 3.2.0
 
 Version 13 - changes since 12
 =====================================
@@ -545,7 +553,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jxr-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>${hc.jxr.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -577,7 +585,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.9.1</version>
+          <version>3.12.1</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.wagon</groupId>
@@ -612,19 +620,6 @@ Fixed JIRA link
           <version>${hc.surefire.version}</version>
         </plugin>
         <!-- Other plugins, alpha order by groupId and artifactId -->
-        <plugin>
-          <groupId>com.agilejava.docbkx</groupId>
-          <artifactId>docbkx-maven-plugin</artifactId>
-          <version>2.0.17</version>
-          <dependencies>
-            <dependency>
-              <groupId>org.docbook</groupId>
-              <artifactId>docbook-xml</artifactId>
-              <version>4.4</version>
-              <scope>runtime</scope>
-            </dependency>
-          </dependencies>
-        </plugin>
         <plugin>
           <groupId>com.github.siom79.japicmp</groupId>
           <artifactId>japicmp-maven-plugin</artifactId>
@@ -768,7 +763,7 @@ Fixed JIRA link
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>animal-sniffer-maven-plugin</artifactId>
-            <version>1.20</version>
+            <version>1.22</version>
             <executions>
               <execution>
                 <id>checkAPIcompatibility</id>
@@ -845,53 +840,6 @@ Fixed JIRA link
     </profile>
 
     <profile>
-      <id>travis-cobertura</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>cobertura-maven-plugin</artifactId>
-            <version>2.7</version>
-            <configuration>
-              <formats>
-                <format>xml</format>
-              </formats>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.eluder.coveralls</groupId>
-            <artifactId>coveralls-maven-plugin</artifactId>
-            <version>${hc.coveralls.version}</version>
-            <configuration>
-              <timestampFormat>${hc.coveralls.timestampFormat}</timestampFormat>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>travis-jacoco</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>${hc.jacoco.version}</version>
-          </plugin>
-          <plugin>
-            <groupId>org.eluder.coveralls</groupId>
-            <artifactId>coveralls-maven-plugin</artifactId>
-            <version>${hc.coveralls.version}</version>
-            <configuration>
-              <timestampFormat>${hc.coveralls.timestampFormat}</timestampFormat>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
       <!--
         Use toolchains plugin to select compiler version if the toolchains.xml file exists.
         To override this behaviour, disable the profile using: -P-use-toolchains
@@ -907,7 +855,7 @@ Fixed JIRA link
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-toolchains-plugin</artifactId>
-            <version>3.0.0</version>
+            <version>3.1.0</version>
             <configuration>
               <toolchains>
                 <jdk>
@@ -947,10 +895,6 @@ Fixed JIRA link
     </profile>
   </profiles>
 
-  <prerequisites>
-    <maven>3.0.5</maven>
-  </prerequisites>
-
   <properties>
     <!-- compiler source and target must now be defined at component level -->
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
@@ -960,17 +904,14 @@ Fixed JIRA link
     <hc.site.url>scp://people.apache.org/www/hc.apache.org/</hc.site.url>
 
     <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
-    <hc.japicmp.version>0.15.4</hc.japicmp.version>
-    <hc.javadoc.version>3.3.1</hc.javadoc.version>
-    <hc.jacoco.version>0.8.8</hc.jacoco.version>
-    <hc.jxr.version>3.1.1</hc.jxr.version>
-    <hc.surefire.version>3.0.0-M5</hc.surefire.version>
-    <hc.project-info.version>3.1.0</hc.project-info.version>
-    <hc.checkstyle.version>3.1.2</hc.checkstyle.version>
+    <hc.japicmp.version>0.16.0</hc.japicmp.version>
+    <hc.javadoc.version>3.4.1</hc.javadoc.version>
+    <hc.surefire.version>3.0.0-M7</hc.surefire.version>
+    <hc.project-info.version>3.4.1</hc.project-info.version>
+    <hc.checkstyle.version>3.2.0</hc.checkstyle.version>
+    <hc.jxr.version>3.3.0</hc.jxr.version>
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
     <hc.animal-sniffer.signature.ignores />
-    <hc.coveralls.version>4.3.0</hc.coveralls.version>
-    <hc.coveralls.timestampFormat>EpochMillis</hc.coveralls.timestampFormat>
 
   </properties>
 </project>
