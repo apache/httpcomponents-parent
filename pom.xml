@@ -404,6 +404,15 @@ Fixed JIRA link
       </roles>
       <timezone>America/Los_Angeles</timezone>
     </developer>
+    <developer>
+      <name>Arturo Bernal</name>
+      <id>abernal</id>
+      <email>abernal -at- apache.org</email>
+      <roles>
+        <role>Committer</role>
+      </roles>
+      <timezone>Europe/Brussels</timezone>
+    </developer>
   </developers>
 
   <contributors>
@@ -434,10 +443,6 @@ Fixed JIRA link
     <contributor>
       <name>Michajlo Matijkiw</name>
       <email>michajlo_matijkiw -at- comcast.com</email>
-    </contributor>
-    <contributor>
-      <name>Arturo Bernal</name>
-      <email>arturobernalg -at- gmail.com</email>
     </contributor>
   </contributors>
   <mailingLists>
