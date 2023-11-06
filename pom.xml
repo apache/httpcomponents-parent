@@ -410,6 +410,7 @@ Fixed JIRA link
       <email>abernal -at- apache.org</email>
       <roles>
         <role>Committer</role>
+        <role>PMC</role>
       </roles>
       <timezone>Europe/Brussels</timezone>
     </developer>
