@@ -402,6 +402,7 @@ Fixed JIRA link
       <email>rschmitt@apache.org</email>
       <roles>
         <role>Committer</role>
+        <role>PMC</role>
       </roles>
       <timezone>America/Los_Angeles</timezone>
     </developer>
