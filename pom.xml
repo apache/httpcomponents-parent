@@ -43,6 +43,13 @@
 
 <!--
 
+Version 15 - changes since 14
+=====================================
+
+maven-jxr-plugin removed
+maven-surefire-report-plugin removed
+removed reporting section and report plugin version declarations
+
 Version 14 - changes since 13
 =====================================
 
@@ -543,7 +550,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${hc.javadoc.version}</version>
+          <version>3.10.0</version>
           <configuration>
             <!-- reduce console output. Can override with -Dquiet=false -->
             <quiet>true</quiet>
@@ -560,13 +567,8 @@ Fixed JIRA link
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jxr-plugin</artifactId>
-          <version>${hc.jxr.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>${hc.project-info.version}</version><!-- needed for direct goal use -->
+          <version>3.6.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -620,38 +622,17 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>${hc.surefire.version}</version>
+          <version>3.5.0</version>
         </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>${hc.surefire.version}</version>
-        </plugin>
-        <!-- Other plugins, alpha order by groupId and artifactId -->
         <plugin>
           <groupId>com.github.siom79.japicmp</groupId>
           <artifactId>japicmp-maven-plugin</artifactId>
-          <version>${hc.japicmp.version}</version>
-          <configuration>
-            <oldVersion>
-              <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>${project.artifactId}</artifactId>
-                <version>${api.comparison.version}</version>
-                <type>jar</type>
-              </dependency>
-            </oldVersion>
-            <newVersion>
-              <file>
-                <path>${project.build.directory}/${project.build.finalName}.${project.packaging}</path>
-              </file>
-            </newVersion>
-          </configuration>
+          <version>0.21.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>${hc.checkstyle.version}</version>
+          <version>3.3.1</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.httpcomponents</groupId>
@@ -679,28 +660,6 @@ Fixed JIRA link
       </plugins>
     </pluginManagement>
   </build>
-
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>${hc.project-info.version}</version><!-- needed for mvn site -->
-        <!-- in particular, we don't want mailing-list to be inherited -->
-        <inherited>false</inherited>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>team</report>
-              <report>issue-management</report>
-              <report>scm</report>
-              <report>mailing-lists</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-    </plugins>
-  </reporting>
 
   <profiles>
 
@@ -905,19 +864,14 @@ Fixed JIRA link
 
   <properties>
     <!-- compiler source and target must now be defined at component level -->
+    <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.outputTimestamp>2021-01-10T15:31:00Z</project.build.outputTimestamp>
-    <hc.site.url>scp://people.apache.org/www/hc.apache.org/</hc.site.url>
+    <hc.site.url>scm:svn:https://svn.apache.org/repos/asf/httpcomponents/site/</hc.site.url>
 
-    <!-- Define versions of all report plugins, because they should match usage in pluginManagement and modules -->
-    <hc.japicmp.version>0.21.2</hc.japicmp.version>
-    <hc.javadoc.version>3.10.0</hc.javadoc.version>
-    <hc.surefire.version>3.5.0</hc.surefire.version>
-    <hc.project-info.version>3.6.2</hc.project-info.version>
-    <hc.checkstyle.version>3.3.1</hc.checkstyle.version>
-    <hc.jxr.version>3.5.0</hc.jxr.version>
+    <!-- animal-sniffer config -->
     <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
     <hc.animal-sniffer.signature.ignores />
 
