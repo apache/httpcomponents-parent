@@ -49,6 +49,7 @@ Version 15 - changes since 14
 maven-jxr-plugin removed
 maven-surefire-report-plugin removed
 removed reporting section and report plugin version declarations
+apache-rat-plugin 0.14 -> 0.17
 
 Version 14 - changes since 13
 =====================================
@@ -512,6 +513,7 @@ Fixed JIRA link
       <plugin>
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
+        <version>0.17</version>
         <!-- Should agree with config in reporting section -->
         <configuration>
           <!--
@@ -519,9 +521,9 @@ Fixed JIRA link
                    <excludes combine.children="merge">
                so that the child pom entries replace the parent entries
            -->
-          <excludes combine.children="append">
-            <exclude>.pmd</exclude>
-          </excludes>
+          <inputExcludes combine.children="append">
+            <inputExclude>.pmd</inputExclude>
+          </inputExcludes>
         </configuration>
       </plugin>
       <plugin>
