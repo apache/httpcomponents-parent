@@ -29,7 +29,7 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>27</version>
+    <version>37</version>
   </parent>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>httpcomponents-parent</artifactId>
@@ -46,6 +46,10 @@
 Version 15 - changes since 14
 =====================================
 
+apache.parent.version 27 -> 37
+maven-javadoc-plugin 3.10.0 -> 3.12.0
+apache.rat.version 0.12 -> 0.17
+japicmp-maven-plugin 0.21.2 -> 0.25.4
 maven-jxr-plugin removed
 maven-surefire-report-plugin removed
 removed reporting section and report plugin version declarations
@@ -145,7 +149,7 @@ maven-resources-plugin 2.7 -> 3.0.1
 org.apache:apache POM 13 -> 18
 animal-sniffer-maven-plugin 1.11 => 1.15
 docbkx-maven-plugin 2.0.15 => 2.0.16
-hc.rat.version 0.11 -> 0.12
+apache.rat.version 0.11 -> 0.12
 Javadoc 2.9.1 => 2.10.4
 Surefire 2.15 => 2.19
 JXR 2.3 => 2.5
@@ -512,17 +516,7 @@ Fixed JIRA link
       <plugin>
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
-        <!-- Should agree with config in reporting section -->
-        <configuration>
-          <!--
-               If you wish to override this list in the component (child) pom, ensure you use
-                   <excludes combine.children="merge">
-               so that the child pom entries replace the parent entries
-           -->
-          <excludes combine.children="append">
-            <exclude>.pmd</exclude>
-          </excludes>
-        </configuration>
+        <version>0.17</version>
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
@@ -550,7 +544,7 @@ Fixed JIRA link
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.10.0</version>
+          <version>3.12.0</version>
           <configuration>
             <!-- reduce console output. Can override with -Dquiet=false -->
             <quiet>true</quiet>
@@ -627,7 +621,7 @@ Fixed JIRA link
         <plugin>
           <groupId>com.github.siom79.japicmp</groupId>
           <artifactId>japicmp-maven-plugin</artifactId>
-          <version>0.21.2</version>
+          <version>0.25.4</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -865,6 +859,7 @@ Fixed JIRA link
   <properties>
     <!-- compiler source and target must now be defined at component level -->
     <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
