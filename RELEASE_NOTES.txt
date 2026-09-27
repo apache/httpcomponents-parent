@@ -1,0 +1,11 @@
+Release 15
+-----------------
+
+Change Log
+-------------------
+
+* Upgraded org.apache.apache to 40
+* Removed outdated profiles
+* Removed reporting section and report plugin version declarations
+
+
