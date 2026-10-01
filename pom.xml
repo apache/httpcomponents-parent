@@ -41,6 +41,13 @@
 
 
 <!--
+Version 16 - changes since 15
+=====================================
+
+parse-target-version profile removed
+build-helper-maven-plugin removed
+animal-sniffer profile removed
+animal-sniffer-maven-plugin removed
 
 Version 15 - changes since 14
 =====================================
@@ -662,96 +669,6 @@ Fixed JIRA link
   <profiles>
 
     <profile>
-      <!--
-        Make the version parts of the maven.compiler.target property
-        available as separate properties, so that they can be used to define
-        the java signature artifactId used by animal-sniffer etc.
-      -->
-      <id>parse-target-version</id>
-      <activation>
-        <property>
-          <!--
-             This property should always be defined.
-             The intention is to ensure that the profile is always enabled.
-             (activeByDefault only applies if other profiles are not enabled)
-          -->
-          <name>user.home</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>build-helper-maven-plugin</artifactId>
-            <version>3.2.0</version>
-            <executions>
-              <execution>
-                <id>parse-version</id>
-                <!-- binds to the validate phase by default -->
-                <goals>
-                  <goal>parse-version</goal>
-                </goals>
-                <configuration>
-                  <propertyPrefix>javaTarget</propertyPrefix>
-                  <versionString>${maven.compiler.target}</versionString>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <!--
-         Runs the Animal Sniffer plugin to check that generated code does not included references
-         to methods/classes etc that are not present in the standard Java runtime for the defined target version.
-         To bypass the checks, define "animal.sniffer.skip" as true, or create the file "src/site/resources/profile.noanimal"
-    -->
-
-    <profile>
-      <id>animal-sniffer</id>
-      <activation>
-        <!--  active unless the file is found -->
-        <file>
-          <missing>src/site/resources/profile.noanimal</missing>
-        </file>
-      </activation>
-
-      <properties>
-        <!-- define this as a property to allow command-line override -->
-        <animal-sniffer.signature>java${javaTarget.majorVersion}${javaTarget.minorVersion}</animal-sniffer.signature>
-      </properties>
-
-      <build>
-        <plugins>
-          <!-- Run the Animal Sniffer checks -->
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>animal-sniffer-maven-plugin</artifactId>
-            <version>1.24</version>
-            <executions>
-              <execution>
-                <id>checkAPIcompatibility</id>
-                <!-- binds to the process-classes phase by default -->
-                <goals>
-                  <goal>check</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <signature>
-                <groupId>org.codehaus.mojo.signature</groupId>
-                <artifactId>${animal-sniffer.signature}</artifactId>
-                <version>${hc.animal-sniffer.signature.version}</version>
-              </signature>
-              <ignores>${hc.animal-sniffer.signature.ignores}</ignores>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
       <id>release</id>
       <build>
         <plugins>
@@ -818,12 +735,7 @@ Fixed JIRA link
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.build.outputTimestamp>2021-01-10T15:31:00Z</project.build.outputTimestamp>
     <hc.site.url>scm:svn:https://svn.apache.org/repos/asf/httpcomponents/site/</hc.site.url>
-
-    <!-- animal-sniffer config -->
-    <hc.animal-sniffer.signature.version>1.0</hc.animal-sniffer.signature.version>
-    <hc.animal-sniffer.signature.ignores/>
 
   </properties>
 </project>
