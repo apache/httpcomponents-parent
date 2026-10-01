@@ -545,6 +545,11 @@ Fixed JIRA link
           <configuration>
             <source>${maven.compiler.source}</source>
             <target>${maven.compiler.target}</target>
+            <!-- unset compiler release version set by the apache parent
+             Presently core and client fail compile with java 8 release target
+             due to the use of jdk.net classes
+             -->
+            <release combine.self="override"/>
           </configuration>
         </plugin>
         <plugin>
